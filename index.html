@@ -30,6 +30,9 @@
     .price-table th,.price-table td { padding:.75rem .65rem; border-bottom:1px solid #e2e8f0; vertical-align:top; }
     .price-table th { color:#475569; font-size:.78rem; text-align:left; background:#f8fafc; }
     .tag { display:inline-flex; align-items:center; border-radius:999px; padding:.25rem .6rem; font-size:.72rem; font-weight:700; }
+    .budget-row { display:flex; justify-content:space-between; gap:1rem; padding:.85rem 1rem; border-radius:.9rem; background:#f8fafc; }
+    .budget-total { background:linear-gradient(135deg,#1e3a8a,#2563eb); color:#fff; border-radius:1rem; padding:1rem 1.1rem; }
+    .budget-option { background:linear-gradient(135deg,#fffbeb,#fff7ed); border:1px solid #fed7aa; border-radius:1rem; padding:1rem 1.1rem; }
     .sticky-nav { position:sticky; top:0; z-index:30; backdrop-filter:blur(12px); }
     section[id] { scroll-margin-top:5.5rem; }
     details > summary { list-style:none; cursor:pointer; }
@@ -121,6 +124,17 @@
           <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-100">
             <strong class="text-emerald-700">建議：Contactless／SimplyGo 信用卡或手機感應</strong>
             <p class="mt-1 text-slate-600">不必註冊、不必儲值。進站與出站都用同一張 Visa／Mastercard／Amex 感應卡，或同一支 Apple Pay／Google Pay 手機；系統依距離扣成人票價。</p>
+            <details class="mt-3 rounded-xl bg-white border border-emerald-200 overflow-hidden">
+              <summary class="p-3 flex items-center justify-between font-bold text-emerald-800"><span><i class="fa-solid fa-mobile-screen-button mr-2"></i>展開手機綁卡與刷卡教學</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
+              <div class="p-4 pt-1 space-y-3 text-slate-600">
+                <p><strong>先向台灣發卡銀行開啟：</strong>海外交易、感應交易及足夠額度。SimplyGo 不要求先註冊；SimplyGo App 只是用來看明細、收扣款通知及申訴。</p>
+                <p><strong>iPhone／Apple Pay：</strong>開啟「錢包 Wallet」→右上角「＋」→「簽帳金融卡或信用卡」→掃描卡片並完成銀行簡訊或 App 驗證。搭車時按兩下側邊鍵、Face ID 驗證後，把 iPhone 頂端靠近閘門感應區；若該卡支援，可在「設定 → 錢包與 Apple Pay → 快速交通卡」選定卡片，之後不必解鎖。</p>
+                <p><strong>Android／Google Wallet：</strong>開啟 Google 錢包 →「新增至錢包」→「付款卡」→完成銀行驗證；確認手機 NFC 已開啟、Google Wallet 是預設感應付款 App。進站前解鎖手機，再把手機背面 NFC 區靠近讀卡機。</p>
+                <p><strong>刷入站／出站：</strong>同一趟必須用同一支手機或同一張實體卡。看到閘門顯示「Bank Card SimplyGo」即可通行；不要進站刷手機、出站改刷該卡的實體卡，否則會被視為兩段不完整旅程。</p>
+                <p><strong>沒有手機：</strong>直接使用有感應符號的實體 Visa／Mastercard／Amex，每人一張；或在 MRT 站 Passenger Service Centre／Ticket Office 購買 SimplyGo EZ-Link 儲值卡後加值使用。刷卡時從錢包取出，避免一次感應到多張卡。</p>
+                <div class="flex flex-wrap gap-2"><a class="buy-btn map-btn" href="https://www.simplygo.com.sg/faqs/cards-and-charms/simplygo/contactless-bank-cards/" target="_blank">SimplyGo 官方教學</a><a class="buy-btn map-btn" href="https://support.apple.com/105123" target="_blank">Apple 快速交通卡</a><a class="buy-btn map-btn" href="https://support.google.com/wallet/answer/12059518" target="_blank">Google Wallet 交通教學</a></div>
+              </div>
+            </details>
           </div>
           <ul class="space-y-2 text-slate-600">
             <li><strong>每人一個支付媒介：</strong>同一張卡不能替 8 人連刷；實體卡與該卡綁定的手機也視為不同媒介，進出站不可混用。</li>
@@ -136,7 +150,8 @@
           <p><strong>它不是新加坡 MRT。</strong>這是一條從 VivoCity 怡豐城 3 樓進入 Sentosa Island 聖淘沙島的單軌列車，停靠 Resorts World、Imbiah、Beach Station。</p>
           <p><strong>用途：</strong>從 HarbourFront 港灣站轉乘，前往新加坡海洋生態館、環球影城、海灘與時光之翼。</p>
           <p><strong>費用：</strong>VivoCity 進島約 S$4；島內搭乘及離島返回 VivoCity 免費。可直接用感應卡進站。</p>
-          <a class="buy-btn map-btn" href="https://www.sentosa.com.sg/en/things-to-do/attractions/sentosa-express/" target="_blank">Sentosa Express 官方說明</a>
+          <p><strong>如何購票：</strong>最省事是在 VivoCity 怡豐城 3 樓 Lobby L 的閘門，直接感應 EZ-Link、Visa、Mastercard 或 Amex，每人各刷一次；也可在 VivoCity Station 售票櫃台買票，或先在 Sentosa 官網購買 S$4 電子票。8 人全買標準票共 S$32。</p>
+          <div class="flex flex-wrap gap-2"><a class="buy-btn bg-purple-600 text-white" href="https://www.sentosa.com.sg/en/things-to-do/attractions/sentosa-express/" target="_blank">官方購買 S$4 車票</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=VivoCity+Sentosa+Express+Station" target="_blank">VivoCity 車站地圖</a></div>
         </div>
       </div>
     </section>
@@ -154,7 +169,7 @@
         <article class="stop">
           <span class="stop-dot bg-orange-500"><i class="fa-solid fa-van-shuttle"></i></span>
           <h3 class="font-extrabold text-lg">13:55 抵達新加坡 → 15:30 左右入住飯店</h3>
-          <p class="text-sm text-slate-600 mt-1">入境與領行李抓 60－90 分；8 人＋行李預約 13 人座車前往飯店，車程約 25－35 分。</p>
+          <p class="text-sm text-slate-600 mt-1">入境與領行李抓 60－90 分；8 人＋行李由旅行社安排免費接駁前往飯店，車程約 25－35 分。此段不另列交通費。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/dir/?api=1&origin=Singapore+Changi+Airport&destination=Mercure+ICON+Singapore+City+Centre&travelmode=driving" target="_blank">機場 → 飯店路線</a>
           <div class="leg">Singapore Changi Airport <span class="text-indigo-500">━━ 專車 25－35 分 ━━</span> Mercure ICON Singapore City Centre 新加坡市中心美居 ICON 酒店</div>
         </article>
@@ -249,7 +264,7 @@
           <span class="stop-dot bg-slate-600"><i class="fa-solid fa-suitcase-rolling"></i></span>
           <h3 class="font-extrabold text-lg">13:00－15:00 飯店取行李與休息</h3>
           <p class="text-sm text-slate-600 mt-1">不再安排景點。14:40 全員集合、確認護照與船票，15:00 準時上車。</p>
-          <div class="leg">Mercure ICON Singapore City Centre <span class="text-indigo-500">━━ 13 人座預約車約 15－25 分 ━━</span> Marina Bay Cruise Centre Singapore 新加坡濱海灣郵輪中心｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Marina+Bay+Cruise+Centre+Singapore&travelmode=driving" target="_blank">開車路線</a></div>
+          <div class="leg">Mercure ICON Singapore City Centre <span class="text-indigo-500">━━ 旅行社免費接駁約 15－25 分 ━━</span> Marina Bay Cruise Centre Singapore 新加坡濱海灣郵輪中心｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Marina+Bay+Cruise+Centre+Singapore&travelmode=driving" target="_blank">開車路線</a></div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-blue-700"><i class="fa-solid fa-ship"></i></span>
@@ -310,9 +325,9 @@
         <article class="stop">
           <span class="stop-dot bg-purple-600"><i class="fa-solid fa-ship"></i></span>
           <h3 class="font-extrabold text-lg">07:00 雲頂夢號抵達新加坡</h3>
-          <p class="text-sm text-slate-600 mt-1">抵港不等於立即下船；通關、領行李抓 45－75 分。預約車建議設定 07:45－08:00 並與司機保持聯絡。</p>
+          <p class="text-sm text-slate-600 mt-1">抵港不等於立即下船；通關、領行李抓 45－75 分。郵輪中心至機場由旅行社安排免費接駁，建議與旅行社確認 07:45－08:00 集合點及聯絡方式；此段不另列交通費。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/dir/?api=1&origin=Marina+Bay+Cruise+Centre+Singapore&destination=Jewel+Changi+Airport&travelmode=driving" target="_blank">郵輪中心 → Jewel 路線</a>
-          <div class="leg">Marina Bay Cruise Centre <span class="text-indigo-500">━━ 專車約 25－35 分 ━━</span> Jewel Changi Airport 星耀樟宜</div>
+          <div class="leg">Marina Bay Cruise Centre <span class="text-indigo-500">━━ 旅行社免費接駁約 25－35 分 ━━</span> Jewel Changi Airport 星耀樟宜</div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-orange-500"><i class="fa-solid fa-mug-hot"></i></span>
@@ -378,27 +393,56 @@
 
     <section class="grid lg:grid-cols-2 gap-6">
       <div class="card p-6 md:p-8">
-        <h2 class="text-2xl font-extrabold"><i class="fa-solid fa-note-sticky text-amber-500 mr-2"></i>簡易小記</h2>
-        <ul class="mt-5 space-y-3 text-sm text-slate-600">
-          <li><strong>馬六甲：</strong>包車訂單必須寫「ICQS 往返」，並索取司機 WhatsApp 與車牌。</li>
-          <li><strong>新加坡交通：</strong>8 人各準備一張感應卡或一支手機，進出站使用同一媒介。</li>
-          <li><strong>長輩節奏：</strong>7/31 只走飯店周邊；8/1 全日集中濱海灣；8/2 午餐後回飯店，不在登船日前硬塞景點。</li>
-          <li><strong>門票：</strong>主行程只需濱海灣花園雙館票。海洋生態館與時光之翼都是 8/1 聖淘沙備用方案，確認替換後才買。</li>
-          <li><strong>餐廳：</strong>每個完整岸上日都有早餐或午餐＋晚餐；8 人熱門餐廳建議先訂位或錯峰。</li>
-          <li><strong>現金：</strong>馬六甲準備少量 MYR，支付小吃、司機小費或臨時附加費。</li>
-        </ul>
+        <h2 class="text-2xl font-extrabold"><i class="fa-solid fa-suitcase text-amber-500 mr-2"></i>注意與必備</h2>
+        <div class="mt-5 space-y-5 text-sm text-slate-600">
+          <div>
+            <h3 class="font-extrabold text-slate-800">行李與衣物建議</h3>
+            <ul class="mt-2 space-y-2">
+              <li><strong>託運行李：</strong>建議每 2 人共用 1 個 24－26 吋行李箱，8 人約 4 箱；另每人 1 個隨身背包。郵輪房間空間有限，不建議每人都帶 28 吋箱。</li>
+              <li><strong>換洗衣物：</strong>5 天準備 4－5 套薄短袖、4－5 套貼身衣物、1 件薄外套、1 套睡衣、泳衣及舒適防滑鞋；郵輪冷氣與花園雙館較冷。</li>
+              <li><strong>必備清單：</strong>護照、電子機票、船票、保險證明、信用卡、少量新幣與馬幣、個人藥品、摺疊傘、防曬、行動電源、Type G 轉接頭、充電線及防水夾鏈袋。</li>
+              <li><strong>行動電源：</strong>必須放隨身行李，不可託運；容量標示要清楚，仍以航空公司最新規則為準。</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-xl bg-red-50 border border-red-200">
+            <h3 class="font-extrabold text-red-800"><i class="fa-solid fa-scale-balanced mr-2"></i>新加坡法規提醒</h3>
+            <ul class="mt-2 space-y-2">
+              <li><strong>口香糖：</strong>一般口香糖禁止攜入新加坡；「咀嚼本身」不是全面違法，但不要攜帶或亂丟。醫療或牙科用途須符合規定。</li>
+              <li><strong>電子煙：</strong>禁止持有、使用、購買及攜入電子煙與相關產品，轉機旅客也不要帶入境。</li>
+              <li><strong>吸菸：</strong>僅在指定吸菸區；室內、公共運輸、巴士站及多數公共場所禁止吸菸。</li>
+              <li><strong>垃圾與飲食：</strong>不可亂丟垃圾；MRT 車站與車廂內不要飲食。榴槤通常也禁止帶上公共運輸或進飯店。</li>
+              <li><strong>酒精：</strong>公共場所通常於 22:30－07:00 禁止飲酒；酒吧、餐廳等持牌場所依營業規定。</li>
+              <li><strong>過馬路：</strong>走行人穿越道並依號誌通行，不要任意穿越道路。</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-3"><a class="buy-btn map-btn" href="https://www.customs.gov.sg/individuals/going-through-customs/arrival/prohibited-and-controlled-goods/" target="_blank">新加坡海關禁限品</a><a class="buy-btn map-btn" href="https://www.nea.gov.sg/our-services/smoking-prohibition/overview" target="_blank">NEA 禁菸規定</a><a class="buy-btn map-btn" href="https://www.police.gov.sg/Advisories/Alcohol-and-Public-Entertainment-Licence/Consumption-of-Liquor" target="_blank">公共場所飲酒規定</a></div>
+          </div>
+          <div class="p-4 rounded-xl bg-blue-50 border border-blue-200">
+            <h3 class="font-extrabold text-blue-800"><i class="fa-solid fa-shield-heart mr-2"></i>旅平險＋不便險</h3>
+            <p class="mt-2">建議至少包含海外突發疾病、意外醫療、緊急救援、班機延誤、行李延誤／損失及旅程更改。以富邦產險網路投保作低價推薦，5 天先抓<strong>每人約 NT$300、8 人約 NT$2,400</strong>；實際保費會依年齡、保額與方案改變，長輩尤其要逐人試算。</p>
+            <p class="mt-2 text-xs">網路投保通常需由本人完成身分驗證；保險期間要從台灣出發前開始，到回台完成入境後結束，不要只保海外落地時間。</p>
+            <a class="buy-btn mt-3 bg-blue-700 text-white" href="https://www.fubon.com/insurance/b2c/content/prod_travel/index.html" target="_blank">推薦低價｜富邦旅平險＋不便險</a>
+          </div>
+        </div>
       </div>
       <div class="card p-6 md:p-8">
-        <h2 class="text-2xl font-extrabold"><i class="fa-solid fa-coins text-blue-600 mr-2"></i>8 人總額與每人平均</h2>
+        <p class="text-blue-600 font-bold">TRIP BUDGET</p>
+        <h2 class="text-2xl font-extrabold mt-1"><i class="fa-solid fa-coins text-blue-600 mr-2"></i>8 人總額與每人平均</h2>
         <div class="mt-5 space-y-3 text-sm">
-          <div class="flex justify-between gap-4"><span>旅行社房型基礎（沿用前版報價）</span><strong>NT$216,820</strong></div>
-          <div class="flex justify-between gap-4"><span>接送與郵輪服務／燃油費</span><strong>NT$26,400</strong></div>
-          <div class="flex justify-between gap-4"><span>eSIM＋濱海灣花園雙館</span><strong>約 NT$10,184</strong></div>
-          <div class="flex justify-between gap-4"><span>馬六甲包車預留</span><strong>約 NT$6,500－9,000</strong></div>
-          <div class="flex justify-between gap-4"><span>新加坡交通＋岸上餐費估算</span><strong>約 NT$26,000</strong></div>
-          <div class="flex justify-between gap-4 border-t pt-3 text-lg text-blue-800"><span>8 人主行程概算總額</span><strong>約 NT$285,900－288,400</strong></div>
-          <div class="flex justify-between gap-4 text-lg"><span>每人平均</span><strong>約 NT$35,700－36,100</strong></div>
-          <p class="text-xs text-slate-500">住宿與航班配置已更動，旅行社基礎費仍沿用前版數字，收到新版報價後需重算。若改走 8/1 聖淘沙海洋館備用方案，8 人另加約 NT$9,320；未含購物、酒水、海外手續費與包車臨時超時。</p>
+          <div class="budget-row"><span><strong>旅行社房型基礎</strong><br><span class="text-xs text-slate-500">露台雙人房 × 1、露台三人房 × 2</span></span><strong>NT$216,820</strong></div>
+          <div class="budget-row"><span><strong>旅行社免費接駁 × 3 段</strong><br><span class="text-xs text-slate-500">機場→飯店、飯店→郵輪、郵輪→機場</span></span><strong class="text-emerald-700">NT$0</strong></div>
+          <div class="budget-row"><span>eSIM＋濱海灣花園雙館</span><strong>約 NT$10,184</strong></div>
+          <div class="budget-row"><span>新加坡 MRT＋岸上餐費</span><strong>約 NT$26,000</strong></div>
+          <div class="budget-row"><span>旅平險＋不便險預留</span><strong>約 NT$2,400</strong></div>
+          <div class="budget-total">
+            <div class="flex justify-between gap-4 text-lg"><span>確定主行程總額</span><strong>約 NT$255,404</strong></div>
+            <div class="flex justify-between gap-4 mt-2 text-blue-100"><span>每人平均</span><strong>約 NT$31,926</strong></div>
+          </div>
+          <div class="budget-option">
+            <div class="flex justify-between gap-4"><span><strong>可選：馬六甲 ICQS 往返包車</strong><br><span class="text-xs text-slate-500">約 3.5 小時，13:00－16:30；此岸上行程尚未確定</span></span><strong>＋NT$6,500－9,000</strong></div>
+            <div class="border-t border-orange-200 mt-3 pt-3 flex justify-between gap-4 text-orange-900"><span>若加馬六甲包車後總額</span><strong>約 NT$261,904－264,404</strong></div>
+            <div class="flex justify-between gap-4 mt-2 text-orange-800"><span>若加包車每人平均</span><strong>約 NT$32,738－33,051</strong></div>
+          </div>
+          <p class="text-xs text-slate-500">旅行社接送不再重複估價；郵輪服務費、燃油附加費是否已包含，仍須以旅行社新版明細確認。若改走 8/1 聖淘沙海洋館備用方案，8 人另加約 NT$9,320。未含購物、酒水、海外刷卡手續費與包車超時。</p>
         </div>
       </div>
     </section>
@@ -406,7 +450,7 @@
 
   <footer class="bg-slate-900 text-slate-300 mt-12">
     <div class="max-w-7xl mx-auto px-5 py-8 text-sm">
-      <p class="font-bold text-white">最後更新：2026/06/06</p>
+      <p class="font-bold text-white">最後更新：2026/06/07</p>
       <p class="mt-2">交通時間為一般路況估算；週末、下雨、排隊及郵輪通關可能增加時間。所有 Google Maps 按鈕可直接開啟地點或路線。</p>
     </div>
   </footer>
