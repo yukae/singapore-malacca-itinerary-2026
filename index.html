@@ -48,17 +48,23 @@
     .stop { position:relative; padding:0 0 1.6rem; }
     .stop:last-child { padding-bottom:0; }
     .stop-dot { position:absolute; left:-3.5rem; top:.1rem; width:2.5rem; height:2.5rem; display:flex; align-items:center; justify-content:center; border-radius:50%; color:white; background:var(--blue)!important; box-shadow:0 0 0 5px white; z-index:2; }
+    .photo-gallery { display:flex; flex-wrap:wrap; align-items:flex-start; gap:.75rem; margin:.75rem 0 .9rem; }
+    .photo-gallery figure { flex:0 1 300px; max-width:100%; margin:0; }
+    .photo-gallery img { display:block; width:100%; height:auto; border-radius:.7rem; border:1px solid var(--line-soft); background:#e8e8ed; }
+    .photo-gallery figcaption { margin-top:.3rem; color:#6e6e73; font-size:.7rem; line-height:1.4; }
+    .backup-photo { display:block; width:auto; max-width:100%; height:auto; max-height:300px; border-radius:.75rem; border:1px solid var(--line-soft); background:#e8e8ed; }
     .leg { margin:.8rem 0; border:1px dashed #bfc0c5; background:#fafafa; border-radius:.55rem; padding:.78rem .9rem; font-size:.86rem; line-height:1.65; color:#515154; }
     .price-table th,.price-table td { padding:.85rem .7rem; border-bottom:1px solid var(--line-soft); vertical-align:top; }
     .price-table th { color:#515154; font-size:.78rem; text-align:left; background:#f5f5f7; }
     .tag { display:inline-flex; align-items:center; border-radius:999px; padding:.25rem .6rem; font-size:.72rem; font-weight:700; }
     .budget-list { border-top:1px solid var(--line); }
     .budget-row { display:flex; justify-content:space-between; align-items:flex-start; gap:1.5rem; padding:1rem .15rem; border-bottom:1px dashed #b8b8bd; background:transparent; }
-    .budget-row > strong { white-space:nowrap; }
+    .budget-row > strong { white-space:nowrap; text-align:right; }
     .budget-total { margin-top:1.25rem; background:#1d1d1f; color:#fff; border-radius:.85rem; padding:1.2rem 1.25rem; }
     .budget-option { margin-top:.4rem; padding:1rem .15rem 0; border-radius:0; border:0; background:transparent; }
     .budget-option > div:first-child { padding-bottom:1rem; border-bottom:1px dashed #b8b8bd; }
-    .budget-option > div:nth-child(2) { margin-top:1rem!important; border-top:0!important; padding-top:0!important; }
+    .budget-option > div:nth-child(2) { margin-top:1rem!important; border-top:0!important; }
+    .budget-average { align-items:center; background:#f1f2f4; border-radius:.7rem; padding:.7rem .85rem!important; }
     .sticky-nav { position:sticky; top:0; z-index:30; backdrop-filter:blur(12px); }
     section[id] { scroll-margin-top:5.5rem; }
     details > summary { list-style:none; cursor:pointer; }
@@ -82,6 +88,8 @@
       .route { padding-left:3.5rem !important; padding-right:1rem !important; }
       .route::before { left:1.65rem; }
       .stop-dot { left:-2.9rem; width:2.1rem; height:2.1rem; font-size:.75rem; }
+      .photo-gallery figure { flex-basis:100%; }
+      .photo-gallery img,.backup-photo { width:100%; max-height:none; }
       .budget-row { gap:1rem; }
       .budget-row > strong { white-space:normal; text-align:right; }
       .buy-btn { min-height:2.5rem; }
@@ -130,7 +138,7 @@
         <p class="mt-2 text-sm text-slate-600">此區只放本行程採用的方案；完整 Klook（客路）／KKday（旅遊平台）比價已收合在下方。</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="card booking-kkday p-5"><h3 class="font-extrabold">新馬 5 日無限流量 eSIM（虛擬網卡）</h3><p class="text-sm text-slate-600 mt-1">約 NT$276／人，8 人 NT$2,208。</p><a class="buy-btn platform-kkday mt-3" href="https://www.kkday.com/zh-tw/product/526481" target="_blank">購買 eSIM</a></div>
+        <div class="card booking-kkday p-5"><h3 class="font-extrabold">備用加購｜新馬 5 日無限流量 eSIM（虛擬網卡）</h3><p class="text-sm text-slate-600 mt-1">旅行社已附贈每人 1GB eSIM；只有流量不足時才加購。約 NT$276／人。</p><a class="buy-btn platform-kkday mt-3" href="https://www.kkday.com/zh-tw/product/526481" target="_blank">加購無限流量 eSIM</a></div>
         <div class="card booking-klook p-5"><h3 class="font-extrabold">Gardens by the Bay（濱海灣花園）</h3><p class="text-sm text-slate-600 mt-1">雲霧林＋花穹約 NT$997／人。</p><a class="buy-btn platform-klook mt-3" href="https://www.klook.com/zh-TW/activity/127-gardens-by-the-bay-singapore/" target="_blank">購買雙館票</a></div>
         <div class="card booking-klook p-5"><h3 class="font-extrabold">Sands SkyPark Observation Deck（金沙空中花園觀景台）</h3><p class="text-sm text-slate-600 mt-1">16:00 前時段約 NT$843 起／人，8 人約 NT$6,744。</p><a class="buy-btn platform-klook mt-3" href="https://www.klook.com/zh-TW/activity/10552-marina-bay-sands-skypark-observation-deck-admission-ticket-singapore/" target="_blank">購買觀景台門票</a></div>
         <div class="card booking-official p-5"><h3 class="font-extrabold">Wings of Time Fireworks Symphony（時光之翼煙火交響曲）</h3><p class="text-sm text-slate-600 mt-1">標準席 S$22／人，8 人約 S$176（約 NT$4,312）；優先訂 19:40 場。</p><a class="buy-btn platform-official mt-3" href="https://www.sentosa.com.sg/en/things-to-do/attractions/wings-of-time" target="_blank">購買時光之翼</a></div>
@@ -144,13 +152,13 @@
           <div><h3 class="text-xl font-extrabold mb-3 text-orange-700">Klook 方案</h3><div class="overflow-x-auto"><table class="price-table w-full min-w-[720px] text-sm"><thead><tr><th>項目</th><th>價格</th><th>8 人評估</th></tr></thead><tbody>
             <tr><td>新馬 5 日 eSIM</td><td>頁面起價 NT$12，實際依流量方案</td><td>價格顯示不如 KKday 明確</td></tr>
             <tr><td>濱海灣花園雙館</td><td>約 NT$997／人</td><td>約 NT$7,976，主行程採用</td></tr>
-            <tr><td>新加坡海洋生態館（8/1 備用）</td><td>約 NT$1,165／人</td><td>約 NT$9,320；只有改走聖淘沙才購買</td></tr>
+            <tr><td>新加坡海洋生態館（未排入行程）</td><td>約 NT$1,165／人</td><td>約 NT$9,320；目前聖淘沙備用只安排海灘與時光之翼</td></tr>
             <tr><td>馬六甲市區包車</td><td>8 小時約 NT$6,473／車</td><td class="text-red-700 font-bold">頁面最大車型僅 7 人，8 人須兩車，車型不符需求</td></tr>
           </tbody></table></div></div>
           <div><h3 class="text-xl font-extrabold mb-3 text-cyan-700">KKday 方案</h3><div class="overflow-x-auto"><table class="price-table w-full min-w-[720px] text-sm"><thead><tr><th>項目</th><th>價格</th><th>8 人評估</th></tr></thead><tbody>
-            <tr><td>新馬 5 日無限流量 eSIM</td><td>NT$276／人</td><td>NT$2,208，可分享熱點，主行程採用</td></tr>
+            <tr><td>新馬 5 日無限流量 eSIM</td><td>NT$276／人</td><td>旅行社已贈每人 1GB；流量不足時才加購</td></tr>
             <tr><td>濱海灣花園雙館</td><td>約 NT$1,005 起／人</td><td>約 NT$8,040 起</td></tr>
-            <tr><td>新加坡海洋生態館（8/1 備用）</td><td>價格區間混有兒童、長者與套票</td><td>非主行程，確定改走聖淘沙後再買</td></tr>
+            <tr><td>新加坡海洋生態館（未排入行程）</td><td>價格區間混有兒童、長者與套票</td><td>目前不購買；日後若改成聖淘沙全日版再比較</td></tr>
             <tr><td>馬六甲／馬來西亞包車</td><td>頁面約 NT$2,769－14,762</td><td>有 8 人座以上車型；ICQS、實際車價須詢問供應商</td></tr>
           </tbody></table></div></div>
           <p class="text-xs text-slate-500">以上為 2026/06/06 查閱結果；出發日、車型、長者票、匯率與優惠碼會改變，結帳頁為準。</p>
@@ -162,12 +170,16 @@
       <div class="card p-6">
         <h2 class="text-2xl font-extrabold"><i class="fa-solid fa-train-subway text-rose-600 mr-2"></i>MRT（地鐵）一日券與逐次扣款</h2>
         <div class="mt-5 space-y-4 text-sm">
+          <div class="p-4 rounded-xl bg-blue-50 border border-blue-200 text-slate-700">
+            <strong class="text-blue-800">本行程交通原則：MRT（地鐵）為主，Grab（叫車服務）為體力備案</strong>
+            <p class="mt-1">有電梯、轉乘少且步行合理的路段優先搭 MRT，8 人可一起移動，也不必拆成兩輛車。只有地鐵需多次轉乘、步行過長、攜帶大件行李，或長輩當下疲累時才改搭 2 輛 Grab。</p>
+          </div>
           <div class="p-4 rounded-xl bg-red-50 border border-red-100">
             <strong class="text-red-700">Singapore Tourist Pass（新加坡旅遊通行卡）</strong>
             <p class="mt-1 text-slate-600">就是觀光客用的 MRT（地鐵）／基本巴士無限搭乘日票：1 日 S$17、2 日 S$24、3 日 S$29。此行程每天約 2－4 段，不划算。</p>
           </div>
           <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-100">
-            <strong class="text-emerald-700">建議：Contactless（非接觸感應）／SimplyGo（新加坡交通感應支付）</strong>
+            <strong class="text-emerald-700">MRT 付款建議：Contactless（非接觸感應）／SimplyGo（新加坡交通感應支付）</strong>
             <p class="mt-1 text-slate-600">不必註冊、不必儲值。進站與出站都用同一張 Visa／Mastercard／Amex 感應卡，或同一支 Apple Pay／Google Pay 手機；系統依距離扣成人票價。</p>
             <details class="mt-3 rounded-xl bg-white border border-emerald-200 overflow-hidden">
               <summary class="p-3 flex items-center justify-between font-bold text-emerald-800"><span><i class="fa-solid fa-mobile-screen-button mr-2"></i>展開手機綁卡與刷卡教學</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
@@ -185,6 +197,7 @@
             <li><strong>每人一個支付媒介：</strong>同一張卡不能替 8 人連刷；實體卡與該卡綁定的手機也視為不同媒介，進出站不可混用。</li>
             <li><strong>不用註冊：</strong>SimplyGo 帳號只用於查詳細交易紀錄，不是搭車必要條件。</li>
             <li><strong>境外卡費：</strong>每張境外卡每個使用日另收 S$0.60 管理費，銀行也可能收海外交易手續費。</li>
+            <li><strong>以下路段費用：</strong>行程中的 MRT 金額均為成人感應卡單程估算；境外卡每日 S$0.60 管理費與銀行海外手續費另計。</li>
           </ul>
           <a class="buy-btn map-btn" href="https://www.lta.gov.sg/content/ltagov/en/map/fare-calculator.html" target="_blank">只看 LTA MRT 官方票價</a>
         </div>
@@ -202,11 +215,12 @@
     </section>
 
     <section id="day1" class="card overflow-hidden">
-      <div class="bg-blue-800 text-white p-6 md:p-8"><p class="font-bold text-rose-100">第 1 天｜7/31（五）｜牛車水＋聖淘沙</p><h2 class="text-3xl font-extrabold mt-1">桃園 → 飯店 → 麥士威 → 松發肉骨茶 → 時光之翼</h2></div>
+      <div class="bg-blue-800 text-white p-6 md:p-8"><p class="font-bold text-rose-100">第 1 天｜7/31（五）｜牛車水＋濱海灣金沙</p><h2 class="text-3xl font-extrabold mt-1">桃園 → 飯店 → 麥士威 → 松發肉骨茶 → 魚尾獅 → 金沙水舞</h2></div>
       <div class="p-6 md:p-8 route">
         <article class="stop">
           <span class="stop-dot bg-blue-600"><i class="fa-solid fa-plane"></i></span>
           <h3 class="font-extrabold text-lg">08:00 STARLUX Airlines JX771（星宇航空 JX771）桃園起飛</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/taoyuan-airport.jpg" alt="桃園國際機場第二航廈" loading="lazy"><figcaption>Taiwan Taoyuan International Airport（桃園國際機場）第二航廈</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">航線為 Taiwan Taoyuan International Airport（桃園國際機場）→ Singapore Changi Airport（新加坡樟宜機場）。建議 05:00－05:20 抵達機場；板橋搭捷運轉機場捷運約 65－80 分、NT$185／人，清晨班次與首班車銜接須另行確認，8 人帶行李以預約接送較穩妥。</p>
           <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Taiwan+Taoyuan+International+Airport" target="_blank">桃園機場 Google 地圖</a><a class="buy-btn platform-official" href="https://www.starlux-airlines.com/zh-TW/experience/inflight-service/inflight-dining" target="_blank">星宇經濟艙餐點與特殊餐</a></div>
           <div class="leg"><i class="fa-solid fa-plane mr-2"></i>JX771｜08:00－12:40，飛行約 4 小時 40 分 → Singapore Changi Airport（新加坡樟宜機場）</div>
@@ -214,105 +228,136 @@
         <article class="stop">
           <span class="stop-dot bg-orange-500"><i class="fa-solid fa-van-shuttle"></i></span>
           <h3 class="font-extrabold text-lg">12:40 抵達新加坡 → 14:30 左右抵達飯店</h3>
-          <p class="text-sm text-slate-600 mt-1">入境與領行李抓 60－90 分；8 人＋行李由旅行社安排免費接駁前往飯店，車程約 25－35 分。飯店一般 15:00 後入住，若客房尚未準備完成可先寄放行李；此段不另列交通費。</p>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/changi-airport.jpg" alt="新加坡樟宜機場航廈" loading="lazy"><figcaption>Singapore Changi Airport（新加坡樟宜機場）航廈</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">入境與領行李抓 60－90 分；8 人＋行李由旅行社安排接駁前往飯店，車程約 25－35 分，費用已列入「交通接駁」總額。飯店一般 15:00 後入住，若客房尚未準備完成可先寄放行李。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/dir/?api=1&origin=Singapore+Changi+Airport&destination=Mercure+ICON+Singapore+City+Centre&travelmode=driving" target="_blank">機場 → 飯店路線</a>
           <div class="leg">Singapore Changi Airport（新加坡樟宜機場）<span class="text-indigo-500">━━ 專車 25－35 分 ━━</span> Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）</div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-indigo-600"><i class="fa-solid fa-hotel"></i></span>
-          <h3 class="font-extrabold text-lg">14:30－16:05 Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）</h3>
-          <p class="text-sm text-slate-600 mt-1">寄放行李或於 15:00 後辦理入住，並保留休息整理時間。第一天仍可能受入境與接送影響，若 16:15 尚未離開飯店，改採下方 20:40 時光之翼備案。</p>
+          <h3 class="font-extrabold text-lg">14:30－15:30 Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/mercure-icon.jpg" alt="新加坡市中心美居 ICON 酒店" loading="lazy"><figcaption>Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）官方照片</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">寄放行李或於 15:00 後辦理入住，並保留休息整理時間。第一天採可隨時刪減的免費景點；若班機延誤，優先保留晚餐、魚尾獅公園與 20:00 金沙水舞。</p>
           <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Mercure+ICON+Singapore+City+Centre" target="_blank">飯店 Google 地圖</a><a class="buy-btn bg-slate-800 text-white" href="https://all.accor.com/hotel/C2S1/index.zh.shtml#section-rooms" target="_blank">Accor 官方飯店頁</a></div>
           <div class="leg">飯店 <span class="text-slate-400">⋯步行約 8－10 分⋯</span> Maxwell Food Centre（麥士威熟食中心）｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre%2C+8+Club+Street%2C+Singapore+069472&destination=Maxwell+Food+Centre%2C+1+Kadayanallur+Street%2C+Singapore+069184&travelmode=walking" target="_blank">步行路線</a></div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-orange-500"><i class="fa-solid fa-bowl-rice"></i></span>
-          <h3 class="font-extrabold text-lg">16:15－16:50 Maxwell Food Centre（麥士威熟食中心）少量試吃</h3>
+          <h3 class="font-extrabold text-lg">15:40－16:15 Maxwell Food Centre（麥士威熟食中心）少量試吃</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/maxwell.jpg" alt="麥士威熟食中心" loading="lazy"><figcaption>Maxwell Food Centre（麥士威熟食中心）</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">這站不是正式晚餐。8 人共享 2－3 樣海南雞飯、粿條或甘蔗汁即可，避免接著吃松發時太飽；預算約 S$5－10／人。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Maxwell+Food+Centre%2C+1+Kadayanallur+Street%2C+Singapore" target="_blank">麥士威 Google 地圖</a>
           <div class="leg">Maxwell Food Centre（麥士威熟食中心）<span class="text-slate-400">⋯步行約 3－5 分⋯</span> Buddha Tooth Relic Temple（新加坡佛牙寺龍華院）｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Maxwell+Food+Centre&destination=Buddha+Tooth+Relic+Temple&travelmode=walking" target="_blank">步行路線</a></div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-red-600"><i class="fa-solid fa-landmark"></i></span>
-          <h3 class="font-extrabold text-lg">16:50－17:15 Chinatown（牛車水）短程散步</h3>
+          <h3 class="font-extrabold text-lg">16:15－16:40 Chinatown（牛車水）短程散步</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/buddha-temple.jpg" alt="新加坡佛牙寺龍華院" loading="lazy"><figcaption>Buddha Tooth Relic Temple（新加坡佛牙寺龍華院）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/pagoda-street.jpg" alt="新加坡牛車水寶塔街" loading="lazy"><figcaption>Pagoda Street（寶塔街）</figcaption></figure>
+          </div>
           <p class="text-sm text-slate-600 mt-1">以 Buddha Tooth Relic Temple（新加坡佛牙寺龍華院）外觀及 Pagoda Street（寶塔街）為主，不安排長距離購物；若班機延誤可直接刪除此段。</p>
           <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Buddha+Tooth+Relic+Temple" target="_blank">佛牙寺 Google 地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Pagoda+Street+Singapore" target="_blank">寶塔街 Google 地圖</a></div>
           <div class="leg">Buddha Tooth Relic Temple（佛牙寺）<span class="text-slate-400">⋯經牛車水步行約 10－12 分⋯</span> Song Fa Bak Kut Teh - Chinatown Point（松發肉骨茶－唐城坊店）｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Buddha+Tooth+Relic+Temple&destination=Song+Fa+Bak+Kut+Teh+Chinatown+Point&travelmode=walking" target="_blank">步行路線</a></div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-orange-600"><i class="fa-solid fa-bowl-food"></i></span>
-          <h3 class="font-extrabold text-lg">17:20－18:10 晚餐｜Song Fa Bak Kut Teh（松發肉骨茶－唐城坊店）</h3>
-          <p class="text-sm text-slate-600 mt-1">正式晚餐安排新加坡代表性的胡椒肉骨茶、油條與滷味，預算 S$18－28／人。8 人建議先詢問併桌；18:10 必須離席，才有足夠進場緩衝。</p>
+          <h3 class="font-extrabold text-lg">16:50－17:40 晚餐｜Song Fa Bak Kut Teh（松發肉骨茶－唐城坊店）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/bak-kut-teh.webp" alt="新加坡胡椒肉骨茶" loading="lazy"><figcaption>Bak Kut Teh（肉骨茶）餐點示意</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">正式晚餐安排新加坡代表性的胡椒肉骨茶、油條與滷味，預算 S$18－28／人。8 人建議先詢問併桌；若前段延誤，可直接取消牛車水散步來保留用餐時間。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Song+Fa+Bak+Kut+Teh+Chinatown+Point" target="_blank">松發肉骨茶 Google 地圖</a>
-          <div class="leg">Song Fa Bak Kut Teh（松發肉骨茶）<span class="text-rose-600">━━ 預約 2 輛 Grab（叫車服務）直達約 25－35 分 ━━</span> Siloso Beach（西樂索海灘）／Beach Station（海灘站）｜<a class="text-rose-700 underline" href="https://www.google.com/maps/dir/?api=1&origin=Song+Fa+Bak+Kut+Teh+Chinatown+Point&destination=Siloso+Beach%2C+Sentosa&travelmode=driving" target="_blank">開車路線</a></div>
+          <div class="leg">Song Fa Bak Kut Teh（松發肉骨茶）<span class="text-slate-400">⋯步行約 3－5 分⋯</span> Chinatown MRT Station（牛車水地鐵站）<span class="text-blue-600">━━ Downtown Line（濱海市區線）2 站約 4 分 ━━</span> Downtown MRT Station（市中心地鐵站）<span class="text-slate-400">⋯步行約 10－12 分⋯</span> Merlion Park（魚尾獅公園）｜全程約 20－25 分｜<strong>MRT 費約 S$1.28／人</strong>｜<a class="text-blue-700 underline" href="https://www.google.com/maps/dir/?api=1&origin=Song+Fa+Bak+Kut+Teh+Chinatown+Point&destination=Merlion+Park&travelmode=transit" target="_blank">大眾運輸路線</a></div>
         </article>
         <article class="stop">
-          <span class="stop-dot bg-cyan-600"><i class="fa-solid fa-umbrella-beach"></i></span>
-          <h3 class="font-extrabold text-lg">18:50－19:25 Siloso Beach（西樂索海灘）散步與休息</h3>
-          <p class="text-sm text-slate-600 mt-1">抵達 Beach Station（海灘站）後只走靠近表演場地的平坦海灘區，看看夕陽、拍照及上洗手間，不安排完整海岸步道。長輩可直接在時光之翼入口附近坐下休息。</p>
-          <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Siloso+Beach+Sentosa" target="_blank">西樂索海灘 Google 地圖</a>
-          <div class="leg">Siloso Beach（西樂索海灘）<span class="text-slate-400">⋯步行約 3－5 分⋯</span> Wings of Time（時光之翼）；19:25 前開始排隊入場</div>
+          <span class="stop-dot bg-cyan-600"><i class="fa-solid fa-camera"></i></span>
+          <h3 class="font-extrabold text-lg">18:00－18:35 Merlion Park（魚尾獅公園）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/merlion.jpg" alt="新加坡魚尾獅公園" loading="lazy"><figcaption>Merlion Park（魚尾獅公園）</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">從濱海灣北岸拍攝魚尾獅與 Marina Bay Sands（濱海灣金沙）完整外觀。魚尾獅與金沙安排在同一天，比從濱海灣花園折返更順；若下雨可縮短至 15 分鐘。</p>
+          <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Merlion+Park" target="_blank">魚尾獅公園 Google 地圖</a>
+          <div class="leg"><strong>長輩優先：</strong>Merlion Park（魚尾獅公園）<span class="text-slate-400">⋯步行約 2－4 分至 One Fullerton（浮爾頓一號）上車點⋯</span><span class="text-rose-600">━━ 2 輛 Grab（叫車服務）車程約 8－12 分 ━━</span> The Shoppes at Marina Bay Sands（濱海灣金沙購物中心）｜每車約 S$8－14，兩車約 S$16－28｜<a class="text-rose-700 underline" href="https://www.google.com/maps/dir/?api=1&origin=One+Fullerton%2C+Singapore&destination=The+Shoppes+at+Marina+Bay+Sands&travelmode=driving" target="_blank">Grab 車程路線</a><br><span class="text-xs">此段不建議 MRT：走回 Downtown（市中心）／Raffles Place（萊佛士坊）地鐵站再搭到 Bayfront（海灣舫），總步行與時間沒有優勢。若天候涼爽且長輩體力許可，可沿濱海灣直接步行約 20－25 分，風景較好且免費。</span></div>
         </article>
         <article class="stop">
-          <span class="stop-dot bg-pink-600"><i class="fa-solid fa-fire-flame-curved"></i></span>
-          <h3 class="font-extrabold text-lg">19:40－20:00 Wings of Time Fireworks Symphony（時光之翼煙火交響曲）</h3>
-          <p class="text-sm text-slate-600 mt-1">位於 Siloso Beach（西樂索海灘）旁，結合水幕、雷射、火焰與煙火。標準席 S$22／人，8 人 S$176；19:25 前開始排隊。若抵達新加坡延誤，改訂 20:40 場並刪減牛車水散步。</p>
-          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Wings+of+Time+Sentosa" target="_blank">時光之翼 Google 地圖</a><a class="buy-btn platform-official" href="https://www.sentosa.com.sg/en/things-to-do/attractions/wings-of-time" target="_blank">官方購買門票</a></div>
-          <div class="leg">20:10 離場 <span class="text-rose-600">━━ Grab（叫車服務）約 20－30 分；8 人分兩車 ━━</span> Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）｜<a class="text-rose-700 underline" href="https://www.google.com/maps/dir/?api=1&origin=Wings+of+Time%2C+Sentosa&destination=Mercure+ICON+Singapore+City+Centre&travelmode=driving" target="_blank">回飯店路線</a></div>
+          <span class="stop-dot bg-blue-700"><i class="fa-solid fa-building"></i></span>
+          <h3 class="font-extrabold text-lg">18:50－19:45 Marina Bay Sands（濱海灣金沙酒店）＋金沙購物中心</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/marina-bay-sands.jpg" alt="濱海灣金沙酒店外觀" loading="lazy"><figcaption>Marina Bay Sands（濱海灣金沙酒店）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/shoppes-mbs.jpg" alt="濱海灣金沙購物中心室內" loading="lazy"><figcaption>The Shoppes at Marina Bay Sands（濱海灣金沙購物中心）</figcaption></figure>
+          </div>
+          <p class="text-sm text-slate-600 mt-1">參觀金沙酒店公共區域、室內運河及 The Shoppes at Marina Bay Sands（濱海灣金沙購物中心），全程有冷氣與座位。Sands SkyPark Observation Deck（金沙空中花園觀景台）不綁固定票；只有班機準點且仍有體力時才查詢當日場次。</p>
+          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=The+Shoppes+at+Marina+Bay+Sands" target="_blank">金沙購物中心 Google 地圖</a><a class="buy-btn platform-klook" href="https://www.klook.com/zh-TW/activity/10552-marina-bay-sands-skypark-observation-deck-admission-ticket-singapore/" target="_blank">查詢觀景台當日票</a></div>
+          <div class="leg">金沙購物中心內 <span class="text-slate-400">⋯步行約 5－8 分⋯</span> Event Plaza（金沙戶外活動廣場）；19:45 前到場找位置</div>
+        </article>
+        <article class="stop">
+          <span class="stop-dot bg-fuchsia-700"><i class="fa-solid fa-water"></i></span>
+          <h3 class="font-extrabold text-lg">20:00－20:15 Spectra（金沙水舞秀）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/spectra.jpg" alt="金沙 Spectra 水舞秀" loading="lazy"><figcaption>Spectra（金沙水舞秀）</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">在 Event Plaza（金沙戶外活動廣場）正面觀看水幕、噴泉、雷射與音樂。表演後從 Bayfront MRT Station（海灣舫地鐵站）搭車回飯店；若長輩已疲累或下雨，再改搭 2 輛 Grab（叫車服務）。</p>
+          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Spectra+A+Light+and+Water+Show" target="_blank">Spectra Google 地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Spectra+A+Light+and+Water+Show&destination=Mercure+ICON+Singapore+City+Centre&travelmode=transit" target="_blank">MRT 回飯店路線</a></div>
+          <div class="leg">Event Plaza（金沙戶外活動廣場）<span class="text-slate-400">⋯步行約 5－8 分⋯</span> Bayfront MRT Station（海灣舫地鐵站）<span class="text-blue-600">━━ Downtown Line（濱海市區線）2 站約 4 分 ━━</span> Telok Ayer MRT Station（直落亞逸地鐵站）<span class="text-slate-400">⋯步行約 5－8 分⋯</span> 飯店｜全程約 20－25 分｜<strong>MRT 費約 S$1.28／人</strong></div>
         </article>
       </div>
     </section>
 
     <section id="day2" class="card overflow-hidden">
-      <div class="bg-teal-800 text-white p-6 md:p-8"><p class="font-bold text-rose-100">第 2 天｜8/01（六）｜濱海灣同區一日</p><h2 class="text-3xl font-extrabold mt-1">金沙酒店、濱海灣花園、雙場夜景與魚尾獅</h2><div class="mt-4 rounded-2xl bg-white/15 border border-white/20 p-4 text-sm leading-relaxed"><strong>水舞觀賞建議：</strong>Spectra（金沙水舞秀）若要看見完整水幕、噴泉、雷射與聽清楚音樂，建議從 Supertree Grove（擎天樹叢）直接移動至 Event Plaza（金沙戶外活動廣場）。Merlion Park（魚尾獅公園）只能遠眺整體燈光，因此安排在水舞結束後短暫拍照。</div></div>
+      <div class="bg-teal-800 text-white p-6 md:p-8"><p class="font-bold text-rose-100">第 2 天｜8/01（六）｜濱海灣花園完整一日</p><h2 class="text-3xl font-extrabold mt-1">雙館、戶外花園、沙嗲灣與擎天樹燈光秀</h2><div class="mt-4 rounded-2xl bg-white/15 border border-white/20 p-4 text-sm leading-relaxed"><strong>安排原則：</strong>這一天不再折返金沙與魚尾獅，完整留給 Gardens by the Bay（濱海灣花園）。除了雙館與 Supertree Grove（擎天樹叢），也安排 Dragonfly Lake（蜻蜓湖）、Heritage Gardens（文化遺產花園）等免費戶外區域，並保留長輩休息時間。</div></div>
       <div class="p-6 md:p-8 route">
         <article class="stop">
           <span class="stop-dot bg-teal-600"><i class="fa-solid fa-mug-saucer"></i></span>
           <h3 class="font-extrabold text-lg">08:00－09:00 飯店早餐</h3>
-          <p class="text-sm text-slate-600 mt-1">早餐已含。09:10 由飯店搭 Grab（叫車服務）前往 Sands SkyPark Observation Deck（金沙空中花園觀景台），8 人通常需拆成兩車；車程約 10－15 分。</p>
-          <div class="leg">Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）<span class="text-rose-600">━━ Grab（叫車服務）約 10－15 分 ━━</span> Sands SkyPark Observation Deck（金沙空中花園觀景台）｜<a class="text-rose-700 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Sands+SkyPark+Observation+Deck&travelmode=driving" target="_blank">開車路線</a></div>
-        </article>
-        <article class="stop">
-          <span class="stop-dot bg-blue-700"><i class="fa-solid fa-building"></i></span>
-          <h3 class="font-extrabold text-lg">09:30－10:45 Sands SkyPark Observation Deck（金沙空中花園觀景台）</h3>
-          <p class="text-sm text-slate-600 mt-1">位於金沙酒店 3 號塔 56 樓，可登上家人所說的「衝浪板」公共觀景區俯瞰濱海灣；不含飯店住客專用的無邊際泳池。採預約時段，建議買 16:00 前票，約 NT$843 起／人。</p>
-          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Sands+SkyPark+Observation+Deck" target="_blank">觀景台 Google 地圖</a><a class="buy-btn platform-klook" href="https://www.klook.com/zh-TW/activity/10552-marina-bay-sands-skypark-observation-deck-admission-ticket-singapore/" target="_blank">購買觀景台門票</a></div>
-          <div class="leg">觀景台電梯下樓 <span class="text-slate-400">⋯館內步行約 8－10 分⋯</span> The Shoppes at Marina Bay Sands（金沙購物中心）</div>
-        </article>
-        <article class="stop">
-          <span class="stop-dot bg-orange-500"><i class="fa-solid fa-bowl-food"></i></span>
-          <h3 class="font-extrabold text-lg">10:50－12:20 The Shoppes at Marina Bay Sands（濱海灣金沙購物中心）＋午餐</h3>
-          <p class="text-sm text-slate-600 mt-1">先看室內運河與商場建築，再到 Rasapura Masters（金沙美食廣場）用餐；室內有冷氣且選擇多，預算 S$15－25／人。</p>
-          <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Rasapura+Masters" target="_blank">餐廳 Google 地圖</a>
-          <div class="leg">The Shoppes at Marina Bay Sands（金沙購物中心）<span class="text-slate-400">⋯經地下連通道及戶外步行約 15 分⋯</span> Cloud Forest（雲霧林）｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=The+Shoppes+at+Marina+Bay+Sands&destination=Cloud+Forest+Singapore&travelmode=walking" target="_blank">步行路線</a></div>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/mercure-icon.jpg" alt="新加坡市中心美居 ICON 酒店" loading="lazy"><figcaption>飯店早餐與集合地點：Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">早餐已含。09:15 從飯店步行至 Maxwell MRT Station（麥士威地鐵站），搭 Thomson-East Coast Line（湯申－東海岸線）直達 Gardens by the Bay MRT Station（濱海灣花園地鐵站），不需轉乘。</p>
+          <div class="leg">飯店 <span class="text-slate-400">⋯步行約 6－8 分⋯</span> Maxwell MRT Station（麥士威地鐵站）<span class="text-blue-600">━━ Thomson-East Coast Line（湯申－東海岸線）4 站約 8 分 ━━</span> Gardens by the Bay MRT Station（濱海灣花園地鐵站）<span class="text-slate-400">⋯步行約 10－12 分⋯</span> Cloud Forest（雲霧林）｜全程約 25－30 分｜<strong>MRT 費約 S$1.38－1.49／人</strong>｜<a class="text-blue-700 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Cloud+Forest+Singapore&travelmode=transit" target="_blank">MRT 路線</a></div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-emerald-600"><i class="fa-solid fa-leaf"></i></span>
-          <h3 class="font-extrabold text-lg">12:50－16:50 Gardens by the Bay（濱海灣花園）</h3>
-          <p class="text-sm text-slate-600 mt-1">完整參觀 Cloud Forest（雲霧林）＋Flower Dome（花穹），雙館約 NT$997／人。中間安排 30 分鐘座位休息；館內冷氣較強，長輩帶薄外套。</p>
+          <h3 class="font-extrabold text-lg">09:45－12:45 Cloud Forest（雲霧林）＋Flower Dome（花穹）</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/cloud-forest.jpg" alt="濱海灣花園雲霧林" loading="lazy"><figcaption>Cloud Forest（雲霧林）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/cloud-waterfall.jpg" alt="雲霧林室內瀑布" loading="lazy"><figcaption>Cloud Forest Waterfall（雲霧林室內瀑布）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/flower-dome.jpg" alt="濱海灣花園花穹" loading="lazy"><figcaption>Flower Dome（花穹）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/flower-dome-inside.jpg" alt="花穹室內植物景觀" loading="lazy"><figcaption>Flower Dome（花穹）室內植物景觀</figcaption></figure>
+          </div>
+          <p class="text-sm text-slate-600 mt-1">完整參觀兩座冷室，雙館約 NT$997／人。先看雲霧林瀑布與空中步道，再到花穹欣賞世界各地植物；兩館之間安排 20－30 分鐘座位休息，館內冷氣較強，長輩帶薄外套。</p>
           <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Gardens+by+the+Bay+Singapore" target="_blank">景點 Google 地圖</a><a class="buy-btn platform-klook" href="https://www.klook.com/zh-TW/activity/127-gardens-by-the-bay-singapore/" target="_blank">購買雙館票</a></div>
-          <div class="leg">Flower Dome（花穹）<span class="text-slate-400">⋯步行 12 分；體力不足可搭園區接駁車⋯</span> Satay by the Bay（沙嗲灣）｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Flower+Dome+Singapore&destination=Satay+by+the+Bay&travelmode=walking" target="_blank">Google 路線</a></div>
+          <div class="leg">雙館出口 <span class="text-slate-400">⋯園區內短程步行⋯</span> 鄰近餐飲區；先用午餐並坐下休息</div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-orange-600"><i class="fa-solid fa-utensils"></i></span>
-          <h3 class="font-extrabold text-lg">17:10－18:25 晚餐｜Satay by the Bay（濱海灣花園沙嗲灣）</h3>
-          <p class="text-sm text-slate-600 mt-1">沙嗲、炒粿條、海鮮與飲料預算 S$18－28／人，留在同區用餐，不折返市中心。</p>
-          <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Satay+by+the+Bay" target="_blank">餐廳 Google 地圖</a>
-          <div class="leg">Satay by the Bay（沙嗲灣）<span class="text-slate-400">⋯步行或園區接駁 12－15 分⋯</span> Supertree Grove（擎天樹叢）；18:45 前抵達，可先坐下休息</div>
+          <h3 class="font-extrabold text-lg">12:45－14:00 午餐｜Jurassic Nest Food Hall（侏羅紀美食館）＋休息</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/jurassic-nest.jpg" alt="濱海灣花園侏羅紀美食館" loading="lazy"><figcaption>Jurassic Nest Food Hall（侏羅紀美食館）官方照片</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">位於 Supertree Grove（擎天樹叢），美食館官方營業時間為 11:00－21:00，選擇較多，預算 S$15－25／人。從雙館出口依體力步行或搭園區接駁車前往，至少保留 30 分鐘坐下休息。</p>
+          <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Jurassic+Nest+Food+Hall+Singapore" target="_blank">侏羅紀美食館 Google 地圖</a>
+          <div class="leg">Jurassic Nest Food Hall（侏羅紀美食館）<span class="text-slate-400">⋯分段步行約 8－12 分⋯</span> Dragonfly Lake（蜻蜓湖）</div>
+        </article>
+        <article class="stop">
+          <span class="stop-dot bg-cyan-600"><i class="fa-solid fa-seedling"></i></span>
+          <h3 class="font-extrabold text-lg">14:00－16:30 濱海灣花園戶外園區</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/dragonfly-lake.jpg" alt="濱海灣花園蜻蜓湖" loading="lazy"><figcaption>Dragonfly Lake（蜻蜓湖）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/supertree-day.jpg" alt="濱海灣花園擎天樹叢日間景觀" loading="lazy"><figcaption>Supertree Grove（擎天樹叢）日間景觀</figcaption></figure>
+          </div>
+          <p class="text-sm text-slate-600 mt-1">依體力選走 Dragonfly Lake（蜻蜓湖）、Heritage Gardens（文化遺產花園）、Serene Garden（寧靜花園）及 Supertree Grove（擎天樹叢）白天景觀，不要求全部走完。午後炎熱，戶外每 30－40 分鐘安排座椅或冷氣區休息。</p>
+          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Dragonfly+Lake+Gardens+by+the+Bay" target="_blank">蜻蜓湖 Google 地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Heritage+Gardens+Singapore" target="_blank">文化遺產花園 Google 地圖</a></div>
+          <div class="leg">戶外花園 <span class="text-slate-400">⋯園區接駁車或分段步行⋯</span> Satay by the Bay（濱海灣花園沙嗲灣）</div>
+        </article>
+        <article class="stop">
+          <span class="stop-dot bg-orange-600"><i class="fa-solid fa-utensils"></i></span>
+          <h3 class="font-extrabold text-lg">16:45－18:00 晚餐｜Satay by the Bay（濱海灣花園沙嗲灣）</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/satay-by-bay.jpg" alt="濱海灣花園沙嗲灣" loading="lazy"><figcaption>Satay by the Bay（濱海灣花園沙嗲灣）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/satay.webp" alt="新加坡沙嗲" loading="lazy"><figcaption>Satay（沙嗲）餐點示意</figcaption></figure>
+          </div>
+          <p class="text-sm text-slate-600 mt-1">沙嗲、炒粿條、海鮮與飲料預算 S$18－28／人，留在同一園區用餐。18:00 後慢慢前往擎天樹叢，中途可再次休息。</p>
+          <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Satay+by+the+Bay" target="_blank">沙嗲灣 Google 地圖</a>
+          <div class="leg">Satay by the Bay（沙嗲灣）<span class="text-slate-400">⋯步行或園區接駁約 12－15 分⋯</span> Supertree Grove（擎天樹叢）；最晚 19:15 前到場找座位</div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-fuchsia-700"><i class="fa-solid fa-star"></i></span>
-          <h3 class="font-extrabold text-lg">19:45 Garden Rhapsody（擎天樹燈光秀）→ 21:00 Spectra（金沙水舞秀）</h3>
-          <p class="text-sm text-slate-600 mt-1">19:45 場約 15 分鐘，20:00 結束後立即往 Event Plaza（金沙戶外活動廣場）移動。一般步行約 20－25 分，長輩與週末人潮抓 35－45 分，仍有約 15 分鐘緩衝。Spectra 必須在 Event Plaza 正面看，水幕、噴泉與音樂才完整。</p>
-          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Supertree+Grove" target="_blank">Garden Rhapsody 地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Spectra+A+Light+and+Water+Show" target="_blank">Spectra 地圖</a></div>
-          <div class="leg">Supertree Grove（擎天樹叢）<span class="text-slate-500">⋯經 Dragonfly Bridge（蜻蜓橋）步行 35－45 分⋯</span> Event Plaza（金沙戶外活動廣場）｜<a class="text-rose-700 underline" href="https://www.google.com/maps/dir/?api=1&origin=Supertree+Grove&destination=Spectra+A+Light+and+Water+Show&travelmode=walking" target="_blank">兩場表演步行路線</a></div>
-        </article>
-        <article class="stop">
-          <span class="stop-dot"><i class="fa-solid fa-camera"></i></span>
-          <h3 class="font-extrabold text-lg">21:20－21:45 Merlion Park（魚尾獅公園）</h3>
-          <p class="text-sm text-slate-600 mt-1">Spectra（金沙水舞秀）約 21:15 結束後，搭 Grab（叫車服務）約 8－12 分前往魚尾獅公園，拍攝魚尾獅與 Marina Bay Sands（濱海灣金沙）夜景。若長輩當天已疲累，這站可直接取消回飯店。</p>
-          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Merlion+Park" target="_blank">魚尾獅公園 Google 地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Spectra+A+Light+and+Water+Show&destination=Merlion+Park&travelmode=driving" target="_blank">金沙水舞秀到魚尾獅路線</a></div>
-          <div class="leg">Merlion Park（魚尾獅公園）<span class="text-rose-600">━━ Grab（叫車服務）約 8－12 分 ━━</span> Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）；預計 22:00 左右回飯店</div>
+          <h3 class="font-extrabold text-lg">19:45－20:00 Garden Rhapsody（擎天樹燈光秀）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/supertree-night.jpg" alt="擎天樹叢夜間燈光" loading="lazy"><figcaption>Garden Rhapsody（擎天樹燈光秀）場地夜景</figcaption></figure></div>
+          <p class="text-sm text-slate-600 mt-1">看完 19:45 場後不再趕往金沙水舞。步行前往 Gardens by the Bay MRT Station（濱海灣花園地鐵站），搭同一條線返回 Maxwell MRT Station（麥士威地鐵站）；若長輩已疲累，再改搭 2 輛 Grab。</p>
+          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Supertree+Grove" target="_blank">擎天樹叢 Google 地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Supertree+Grove&destination=Mercure+ICON+Singapore+City+Centre&travelmode=transit" target="_blank">MRT 回飯店路線</a></div>
+          <div class="leg">Supertree Grove（擎天樹叢）<span class="text-slate-400">⋯步行約 10－12 分⋯</span> Gardens by the Bay MRT Station（濱海灣花園地鐵站）<span class="text-blue-600">━━ Thomson-East Coast Line（湯申－東海岸線）4 站約 8 分 ━━</span> Maxwell MRT Station（麥士威地鐵站）<span class="text-slate-400">⋯步行約 6－8 分⋯</span> 飯店｜全程約 25－30 分｜<strong>MRT 費約 S$1.38－1.49／人</strong></div>
         </article>
       </div>
     </section>
@@ -323,12 +368,14 @@
         <article class="stop">
           <span class="stop-dot bg-indigo-600"><i class="fa-solid fa-hotel"></i></span>
           <h3 class="font-extrabold text-lg">08:00－09:00 飯店早餐、退房與寄放行李</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/mercure-icon.jpg" alt="新加坡市中心美居 ICON 酒店" loading="lazy"><figcaption>Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">先完成退房，護照、船票與藥品隨身攜帶；大件行李寄放櫃台。</p>
           <div class="leg">飯店 <span class="text-slate-400">⋯步行約 5－7 分⋯</span> Ya Kun Kaya Toast - Far East Square（亞坤咖椰吐司－遠東廣場店）｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre%2C+8+Club+Street%2C+Singapore+069472&destination=Ya+Kun+Kaya+Toast+Far+East+Square%2C+18+China+Street%2C+Singapore+049560&travelmode=walking" target="_blank">Google 地圖 步行導航</a></div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-amber-600"><i class="fa-solid fa-mug-hot"></i></span>
           <h3 class="font-extrabold text-lg">09:30－10:10 Ya Kun Kaya Toast（亞坤咖椰吐司－遠東廣場店）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/ya-kun-kaya.jpg" alt="亞坤咖椰吐司餐點" loading="lazy"><figcaption>Ya Kun Kaya Toast（亞坤咖椰吐司）餐點</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">早餐已在飯店吃過，這站以分享咖椰吐司、半熟蛋及南洋咖啡為主，預算 S$6－10／人。請在出發前再次確認星期日營業時間；若臨時休息，改附近 Toast Box（土司工坊）。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Ya+Kun+Kaya+Toast+Far+East+Square%2C+18+China+Street%2C+Singapore" target="_blank">亞坤 Google 地圖</a>
           <div class="leg">Ya Kun Kaya Toast（亞坤咖椰吐司）<span class="text-slate-500">⋯步行約 1－2 分⋯</span> Far East Square（遠東廣場歷史街區）</div>
@@ -336,6 +383,7 @@
         <article class="stop">
           <span class="stop-dot"><i class="fa-solid fa-store"></i></span>
           <h3 class="font-extrabold text-lg">10:10－10:35 Far East Square（遠東廣場歷史街區）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/far-east-square.jpg" alt="新加坡遠東廣場歷史街區" loading="lazy"><figcaption>Far East Square（遠東廣場歷史街區）</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">亞坤所在的修復店屋街區，安排短程拍照，不需要另外搭車。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Far+East+Square+Singapore" target="_blank">遠東廣場 Google 地圖</a>
           <div class="leg">Far East Square（遠東廣場）<span class="text-slate-500">⋯步行約 7－10 分⋯</span> Thian Hock Keng Temple（天福宮）</div>
@@ -343,6 +391,7 @@
         <article class="stop">
           <span class="stop-dot"><i class="fa-solid fa-place-of-worship"></i></span>
           <h3 class="font-extrabold text-lg">10:45－11:15 Thian Hock Keng Temple（天福宮）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/thian-hock-keng.jpg" alt="新加坡天福宮" loading="lazy"><figcaption>Thian Hock Keng Temple（天福宮）</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">新加坡歷史悠久的福建廟宇，免費參觀；衣著保持整潔，室內依現場規定拍照。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Thian+Hock+Keng+Temple" target="_blank">天福宮 Google 地圖</a>
           <div class="leg">Thian Hock Keng Temple（天福宮）<span class="text-slate-500">⋯沿 Telok Ayer Street（直落亞逸街）慢走約 20－30 分⋯</span> Club Street（客納街）</div>
@@ -350,6 +399,10 @@
         <article class="stop">
           <span class="stop-dot"><i class="fa-solid fa-person-walking"></i></span>
           <h3 class="font-extrabold text-lg">11:15－12:00 Telok Ayer Street（直落亞逸街）＋Club Street（客納街）</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/telok-ayer.jpg" alt="新加坡直落亞逸街店屋" loading="lazy"><figcaption>Telok Ayer Street（直落亞逸街）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/club-street.jpg" alt="新加坡客納街" loading="lazy"><figcaption>Club Street（客納街）</figcaption></figure>
+          </div>
           <p class="text-sm text-slate-600 mt-1">沿途看老店屋、宗教建築與街頭壁畫，只走平坦區域；Ann Siang Hill（安祥山）有坡度與階梯，不安排完整步道。</p>
           <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Telok+Ayer+Street+Singapore" target="_blank">直落亞逸街 Google 地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Club+Street+Singapore" target="_blank">客納街 Google 地圖</a></div>
           <div class="leg">Club Street（客納街）<span class="text-slate-500">⋯步行約 3－5 分⋯</span> Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店）</div>
@@ -357,14 +410,19 @@
         <article class="stop">
           <span class="stop-dot"><i class="fa-solid fa-suitcase-rolling"></i></span>
           <h3 class="font-extrabold text-lg">12:00－14:30 午餐、休息與回飯店集合</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/club-street.jpg" alt="飯店旁客納街周邊" loading="lazy"><figcaption>飯店旁 Club Street（客納街）周邊；午餐店家尚未指定</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">在飯店附近簡單午餐或保留到登船後用餐。13:30 起陸續回飯店，14:30 全員到齊、領行李、上洗手間並確認護照與船票。</p>
-          <div class="leg">Mercure ICON Singapore City Centre <span class="text-indigo-500">━━ 旅行社免費接駁約 15－25 分 ━━</span> Marina Bay Cruise Centre Singapore 新加坡濱海灣郵輪中心｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Marina+Bay+Cruise+Centre+Singapore&travelmode=driving" target="_blank">開車路線</a></div>
+          <div class="leg">Mercure ICON Singapore City Centre <span class="text-indigo-500">━━ 旅行社接駁約 15－25 分，費用已列總額 ━━</span> Marina Bay Cruise Centre Singapore 新加坡濱海灣郵輪中心｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Marina+Bay+Cruise+Centre+Singapore&travelmode=driving" target="_blank">開車路線</a></div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-blue-700"><i class="fa-solid fa-ship"></i></span>
           <h3 class="font-extrabold text-lg">15:00 飯店出發 → 約 15:30 Marina Bay Cruise Centre（新加坡濱海灣郵輪中心）抵達</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/marina-cruise-centre.jpg" alt="新加坡濱海灣郵輪中心" loading="lazy"><figcaption>Marina Bay Cruise Centre Singapore（新加坡濱海灣郵輪中心）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/genting-dream.jpg" alt="雲頂夢號停靠濱海灣郵輪中心" loading="lazy"><figcaption>Genting Dream（雲頂夢號）停靠濱海灣郵輪中心</figcaption></figure>
+          </div>
           <p class="text-sm text-slate-600 mt-1">辦理雲頂夢號登船。15:30 是預估抵達時間，最晚報到與登船截止仍以旅行社船票文件為準，不可只依此網頁。</p>
-          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Marina+Bay+Cruise+Centre+Singapore" target="_blank">郵輪中心地圖</a><a class="buy-btn platform-official" href="https://www.sunshinetour.com.tw/resortsworld_gentingdream/" target="_blank">雲頂夢號介紹</a><a class="buy-btn platform-neutral" href="https://www.co-traveling.com/?p=1344" target="_blank">房型介紹</a></div>
+          <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Marina+Bay+Cruise+Centre+Singapore" target="_blank">郵輪中心地圖</a><a class="buy-btn platform-official" href="https://www.sunshinetour.com.tw/resortsworld_gentingdream/" target="_blank">雲頂夢號介紹</a><a class="buy-btn platform-neutral" href="https://www.co-traveling.com/?p=1344" target="_blank">房型介紹</a><a class="buy-btn platform-official" href="https://www.gtstour.com.tw/eWeb_gtstour/cruises/worldfood.asp#" target="_blank">餐廳介紹</a><a class="buy-btn platform-official" href="https://www.gtstour.com.tw/eWeb_gtstour/cruises/worldqa.asp" target="_blank">郵輪 QA（常見問題）</a></div>
           <div class="leg"><i class="fa-solid fa-utensils mr-2"></i>晚餐：Dream Dining Room 船上主餐廳｜團費內含，依船卡分配餐期</div>
         </article>
       </div>
@@ -376,6 +434,7 @@
         <article class="stop">
           <span class="stop-dot bg-cyan-600"><i class="fa-solid fa-anchor"></i></span>
           <h3 class="font-extrabold text-lg">13:00 Melaka ICQS Terminal（麻六甲國際郵輪碼頭）下船</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/genting-dream.jpg" alt="雲頂夢號郵輪" loading="lazy"><figcaption>Genting Dream（雲頂夢號）；ICQS 碼頭目前未找到可確認授權的實景圖</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">完整地址：ICQS Terminal, Jalan Taman Kota Laksamana 1, Taman Kota Laksamana, 75200 Melaka, Malaysia。</p>
           <div class="mt-3 p-4 rounded-xl bg-blue-50 border border-blue-200 text-sm text-slate-700"><strong class="text-blue-800">雙程／往返包車：</strong>ICQS → 市區景點 → 同一 ICQS。8 人選 8 人座以上並書面確認碼頭接送。KKday 8 人座以上超時約 RM100／小時；小費非強制，服務良好可全團給 RM20－50。</div>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=ICQS+Terminal%2C+Jalan+Taman+Kota+Laksamana+1%2C+75200+Melaka%2C+Malaysia" target="_blank">ICQS Google 地圖</a>
@@ -384,6 +443,7 @@
         <article class="stop">
           <span class="stop-dot bg-orange-500"><i class="fa-solid fa-bowl-rice"></i></span>
           <h3 class="font-extrabold text-lg">13:20－14:05 午餐｜Hoe Kee Chicken Rice（和記雞飯粒）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/chicken-rice-balls.webp" alt="麻六甲雞飯粒" loading="lazy"><figcaption>Melaka Chicken Rice Balls（麻六甲雞飯粒）餐點示意</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">預算 RM25－35／人。8 人建議共享雞肉、雞飯粒與蔬菜。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Hoe+Kee+Chicken+Rice+Melaka" target="_blank">餐廳 Google 地圖</a>
           <div class="leg">和記 <span class="text-slate-400">⋯步行 5 分⋯</span> Dutch Square 荷蘭紅屋廣場｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Hoe+Kee+Chicken+Rice+Melaka&destination=Dutch+Square+Melaka&travelmode=walking" target="_blank">步行路線</a></div>
@@ -391,6 +451,7 @@
         <article class="stop">
           <span class="stop-dot bg-red-600"><i class="fa-solid fa-landmark"></i></span>
           <h3 class="font-extrabold text-lg">14:10－14:50 Dutch Square（荷蘭紅屋廣場）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/melaka-red-square.webp" alt="麻六甲荷蘭紅屋廣場" loading="lazy"><figcaption>Dutch Square（荷蘭紅屋廣場）</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">免費戶外拍照；長輩不爬完整聖保羅山。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Dutch+Square+Melaka" target="_blank">景點 Google 地圖</a>
           <div class="leg">Dutch Square <span class="text-indigo-500">━━ 包車約 5 分 ━━</span> A Famosa 法摩沙古城門</div>
@@ -398,6 +459,7 @@
         <article class="stop">
           <span class="stop-dot bg-amber-600"><i class="fa-solid fa-archway"></i></span>
           <h3 class="font-extrabold text-lg">15:00－15:35 A Famosa（法摩沙古城門）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/a-famosa.jpg" alt="麻六甲法摩沙古城門" loading="lazy"><figcaption>A Famosa（法摩沙古城門）</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">免費。平緩區短程拍照，長輩可留車上休息。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=A+Famosa+Melaka" target="_blank">景點 Google 地圖</a>
           <div class="leg">A Famosa <span class="text-indigo-500">━━ 包車約 6 分 ━━</span> Jonker 88 雞場街 88</div>
@@ -405,11 +467,15 @@
         <article class="stop">
           <span class="stop-dot bg-pink-600"><i class="fa-solid fa-ice-cream"></i></span>
           <h3 class="font-extrabold text-lg">15:45－16:15 下午餐｜Jonker 88（雞場街 88）</h3>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/jonker-walk.jpg" alt="麻六甲雞場街" loading="lazy"><figcaption>Jonker Walk（雞場街）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/cendol.jpg" alt="麻六甲珍多冰" loading="lazy"><figcaption>Melaka Cendol（麻六甲珍多冰）餐點示意</figcaption></figure>
+          </div>
           <p class="text-sm text-slate-600 mt-1">珍多冰或娘惹叻沙，預算 RM10－20／人。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Jonker+88+Melaka" target="_blank">餐廳 Google 地圖</a>
           <div class="leg">16:15 出發 <span class="text-indigo-500">━━ 包車 8－12 分 ━━</span> 16:30 回 ICQS｜<a class="text-blue-600 underline" href="https://www.google.com/maps/dir/?api=1&origin=Jonker+88+Melaka&destination=ICQS+Terminal+Melaka&travelmode=driving" target="_blank">回碼頭路線</a></div>
         </article>
-        <article class="stop"><span class="stop-dot bg-slate-700"><i class="fa-solid fa-ship"></i></span><h3 class="font-extrabold text-lg">16:30 回到 ICQS｜晚餐回船上主餐廳</h3><p class="text-sm text-slate-600 mt-1">最晚回船時間以當日船卡與廣播為準，必要時刪除 A Famosa 或下午餐，不壓縮回船緩衝。</p></article>
+        <article class="stop"><span class="stop-dot bg-slate-700"><i class="fa-solid fa-ship"></i></span><h3 class="font-extrabold text-lg">16:30 回到 ICQS｜晚餐回船上主餐廳</h3><div class="photo-gallery"><figure><img src="assets/singapore-itinerary/genting-dream.jpg" alt="雲頂夢號郵輪" loading="lazy"><figcaption>返回 Genting Dream（雲頂夢號）</figcaption></figure></div><p class="text-sm text-slate-600 mt-1">最晚回船時間以當日船卡與廣播為準，必要時刪除 A Famosa 或下午餐，不壓縮回船緩衝。</p></article>
       </div>
     </section>
 
@@ -419,13 +485,18 @@
         <article class="stop">
           <span class="stop-dot bg-purple-600"><i class="fa-solid fa-ship"></i></span>
           <h3 class="font-extrabold text-lg">07:00 雲頂夢號抵達新加坡</h3>
-          <p class="text-sm text-slate-600 mt-1">抵港不等於立即下船；通關、領行李抓 45－75 分。郵輪中心至機場由旅行社安排免費接駁，建議與旅行社確認 07:45－08:00 集合點及聯絡方式；此段不另列交通費。</p>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/genting-dream.jpg" alt="雲頂夢號郵輪" loading="lazy"><figcaption>Genting Dream（雲頂夢號）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/marina-cruise-centre.jpg" alt="新加坡濱海灣郵輪中心" loading="lazy"><figcaption>Marina Bay Cruise Centre Singapore（新加坡濱海灣郵輪中心）</figcaption></figure>
+          </div>
+          <p class="text-sm text-slate-600 mt-1">抵港不等於立即下船；通關、領行李抓 45－75 分。郵輪中心至機場由旅行社安排接駁，費用已列入「交通接駁」總額；建議與旅行社確認 07:45－08:00 集合點及聯絡方式。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/dir/?api=1&origin=Marina+Bay+Cruise+Centre+Singapore&destination=Jewel+Changi+Airport&travelmode=driving" target="_blank">郵輪中心 → Jewel 路線</a>
-          <div class="leg">Marina Bay Cruise Centre <span class="text-indigo-500">━━ 旅行社免費接駁約 25－35 分 ━━</span> Jewel Changi Airport 星耀樟宜</div>
+          <div class="leg">Marina Bay Cruise Centre <span class="text-indigo-500">━━ 旅行社接駁約 25－35 分，費用已列總額 ━━</span> Jewel Changi Airport 星耀樟宜</div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-orange-500"><i class="fa-solid fa-mug-hot"></i></span>
           <h3 class="font-extrabold text-lg">08:30－09:30 早餐｜Jewel Changi Airport（星耀樟宜）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/jewel-interior.jpg" alt="星耀樟宜室內空間" loading="lazy"><figcaption>Jewel Changi Airport（星耀樟宜）室內空間</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">若航空公司尚未開放托運，先使用 Jewel 行李寄存，再到 B2 早餐；避免 8 人拖行李逛商場。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Jewel+Changi+Airport" target="_blank">Jewel Google 地圖</a>
           <div class="leg">早餐後 <span class="text-slate-400">⋯館內步行 5－10 分⋯</span> HSBC Rain Vortex 雨漩渦</div>
@@ -433,6 +504,7 @@
         <article class="stop">
           <span class="stop-dot bg-cyan-600"><i class="fa-solid fa-gem"></i></span>
           <h3 class="font-extrabold text-lg">10:00－10:40 HSBC Rain Vortex（雨漩渦）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/jewel-rain-vortex.jpg" alt="星耀樟宜雨漩渦" loading="lazy"><figcaption>HSBC Rain Vortex（雨漩渦）</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">免費。若瀑布尚未運轉或下船延誤，直接移到早午餐或航廈，不等待。</p>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Jewel+Changi+Airport+Rain+Vortex" target="_blank">雨漩渦 Google 地圖</a>
           <div class="leg">Rain Vortex（雨漩渦）<span class="text-slate-400">⋯館內步行約 8－12 分至 B2⋯</span> The Hainan Story（海南寶）</div>
@@ -440,6 +512,7 @@
         <article class="stop">
           <span class="stop-dot bg-amber-600"><i class="fa-solid fa-utensils"></i></span>
           <h3 class="font-extrabold text-lg">10:45－11:35 早午餐｜The Hainan Story（海南寶－Jewel 店）</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/hainan-chicken-rice.jpg" alt="新加坡海南雞飯" loading="lazy"><figcaption>Hainanese Chicken Rice（海南雞飯）餐點示意；非海南寶店內實拍</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">Jewel 官方目前列為每日 08:00－22:00，位於 B2-201/202；供應海南雞飯、叻沙、咖椰吐司及海南式西餐，預算 S$15－28／人。時間不足可改 B2 外帶，11:35 後前往實際出發航廈。</p>
           <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=The+Hainan+Story+Jewel+Changi+Airport" target="_blank">餐廳 Google 地圖</a><a class="buy-btn bg-amber-600 text-white" href="https://www.jewelchangiairport.com/en/dine/the-hainan-story.html" target="_blank">Jewel 官方餐廳頁</a></div>
           <div class="leg">Jewel <span class="text-slate-400">⋯步行／接駁 10－15 分⋯</span> 航空公司出發航廈；最晚 11:50－12:00 到報到櫃台</div>
@@ -447,6 +520,7 @@
         <article class="stop">
           <span class="stop-dot bg-blue-700"><i class="fa-solid fa-plane-departure"></i></span>
           <h3 class="font-extrabold text-lg">14:10 STARLUX Airlines JX772（星宇航空 JX772）新加坡起飛 → 19:00 桃園</h3>
+          <div class="photo-gallery"><figure><img src="assets/singapore-itinerary/changi-airport.jpg" alt="新加坡樟宜機場航廈" loading="lazy"><figcaption>Singapore Changi Airport（新加坡樟宜機場）航廈</figcaption></figure></div>
           <p class="text-sm text-slate-600 mt-1">航線為 Singapore Changi Airport（新加坡樟宜機場）→ Taiwan Taoyuan International Airport（桃園國際機場），表定 14:10－19:00；出發航廈仍以電子機票與當日機場看板為準。</p>
           <a class="buy-btn platform-official mt-2" href="https://www.starlux-airlines.com/zh-TW/experience/inflight-service/inflight-dining" target="_blank">星宇經濟艙餐點與特殊餐</a>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Singapore+Changi+Airport" target="_blank">樟宜機場 Google 地圖</a>
@@ -465,20 +539,44 @@
     <section id="backup" class="space-y-5">
       <div><p class="text-amber-600 font-bold">備用行程</p><h2 class="text-3xl font-extrabold">依日期分類的備用行程</h2><p class="mt-2 text-sm text-slate-600">以下不是要全部塞入主行程，而是遇到下雨、體力或偏好改變時整段替換。</p></div>
       <details class="card overflow-hidden">
-        <summary class="p-5 md:p-6 flex items-center justify-between font-extrabold text-lg bg-blue-50"><span>7/31 備用｜班機或入境延誤</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
-        <div class="p-6 text-sm text-slate-600"><p><strong>改看 20:40 Wings of Time（時光之翼）：</strong>若 16:15 尚未離開飯店，取消佛牙寺與寶塔街，只保留 Maxwell（麥士威）少量試吃及 Song Fa（松發）晚餐；最遲 19:20 從牛車水搭 Grab 直達 Beach Station（海灘站）。若 18:00 後才入住，連麥士威也刪除，飯店附近簡單用餐後直接前往聖淘沙。</p><div class="flex flex-wrap gap-2 mt-3"><a class="buy-btn map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Wings+of+Time%2C+Sentosa&travelmode=driving" target="_blank">飯店到時光之翼</a><a class="buy-btn platform-official" href="https://www.sentosa.com.sg/en/things-to-do/attractions/wings-of-time" target="_blank">官方場次與購票</a></div></div>
+        <summary class="p-5 md:p-6 flex items-center justify-between font-extrabold text-lg bg-blue-50"><span>7/31 備用｜Sentosa（聖淘沙）海灘＋時光之翼</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
+        <div class="p-6 space-y-4 text-sm text-slate-600">
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/siloso-beach.jpg" alt="聖淘沙西樂索海灘" loading="lazy"><figcaption>Siloso Beach（西樂索海灘）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/wings-of-time.jpg" alt="聖淘沙時光之翼" loading="lazy"><figcaption>Wings of Time（時光之翼）官方照片</figcaption></figure>
+          </div>
+          <p><strong>此方案整段取代魚尾獅公園、金沙購物中心與 Spectra（金沙水舞秀）。</strong>是否採用要看實際抵達飯店時間，門票不要太早購買。</p>
+          <p><strong>16:00 前離開飯店：</strong>先在牛車水或飯店附近用餐，再搭 2 輛 Grab（叫車服務）直達 Beach Station（海灘站）；18:20－19:15 在 Siloso Beach（西樂索海灘）靠近表演場地的平坦區域散步，19:25 排隊看 19:40 Wings of Time（時光之翼）。</p>
+          <p><strong>16:15－18:00 才離開飯店：</strong>取消海灘散步與牛車水，只吃簡單晚餐，改看 20:40 場。最晚 19:45 從飯店搭 Grab 出發。</p>
+          <p><strong>18:00 後才完成入住：</strong>取消聖淘沙，留在飯店附近用餐休息；不要為已買門票勉強趕路。</p>
+          <div class="flex flex-wrap gap-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Mercure+ICON+Singapore+City+Centre&destination=Wings+of+Time%2C+Sentosa&travelmode=driving" target="_blank">飯店到時光之翼</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Siloso+Beach+Sentosa" target="_blank">西樂索海灘地圖</a><a class="buy-btn platform-official" href="https://www.sentosa.com.sg/en/things-to-do/attractions/wings-of-time" target="_blank">場次與購票</a></div>
+        </div>
       </details>
       <details class="card overflow-hidden">
-        <summary class="p-5 md:p-6 flex items-center justify-between font-extrabold text-lg bg-teal-50"><span>8/1 備用｜聖淘沙全日替代方案</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
+        <summary class="p-5 md:p-6 flex items-center justify-between font-extrabold text-lg bg-teal-50"><span>8/1 備用｜金沙＋濱海灣花園＋魚尾獅集中版</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
         <div class="p-6 space-y-4 text-sm text-slate-600">
-          <p><strong>此方案會整天取代金沙＋濱海灣花園，不可兩邊都排。</strong></p>
-          <div><h3 class="font-extrabold text-lg text-slate-800">Singapore Oceanarium（新加坡海洋生態館）</h3><p>飯店 → Maxwell TE18 → HarbourFront → VivoCity L3 → Sentosa Express → Resorts World Station，全程約 35－45 分。10:15－13:30 海洋館；Klook 成人票約 NT$1,165／人，8 人約 NT$9,320。</p><div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Singapore+Oceanarium" target="_blank">海洋館地圖</a><a class="buy-btn platform-klook" href="https://www.klook.com/zh-TW/activity/119-singapore-oceanarium/" target="_blank">購買海洋館門票</a></div></div>
-          <div><h3 class="font-extrabold text-lg text-slate-800">午後路線</h3><p>13:40 Malaysian Food Street（馬來西亞美食街）午餐 → 15:00 Sensoryscape（聖淘沙感官步道）→ Siloso Beach（西樂索海灘）→ 17:30 Good Old Days Food Court（好時光美食廣場）晚餐。可選 19:40 Wings of Time（時光之翼），再搭 Sentosa Express（聖淘沙捷運）離島。</p></div>
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/marina-bay-sands.jpg" alt="濱海灣金沙酒店" loading="lazy"><figcaption>Marina Bay Sands（濱海灣金沙酒店）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/cloud-forest.jpg" alt="濱海灣花園雲霧林" loading="lazy"><figcaption>Cloud Forest（雲霧林）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/merlion.jpg" alt="新加坡魚尾獅公園" loading="lazy"><figcaption>Merlion Park（魚尾獅公園）</figcaption></figure>
+          </div>
+          <p><strong>適用情況：</strong>第一天因班機延誤而沒有看到魚尾獅與金沙，或全家仍希望一次完成金沙觀景台、濱海灣花園及兩場夜秀。此版本步行與停留時間較長，長輩較累，主行程仍以拆成兩天為優先。</p>
+          <p><strong>09:30－10:45：</strong>Sands SkyPark Observation Deck（金沙空中花園觀景台）→ 10:50－12:20 The Shoppes at Marina Bay Sands（濱海灣金沙購物中心）及午餐。</p>
+          <p><strong>12:50－16:50：</strong>Cloud Forest（雲霧林）＋Flower Dome（花穹），中間至少安排 30 分鐘座位休息。</p>
+          <p><strong>17:10－18:25：</strong>Satay by the Bay（濱海灣花園沙嗲灣）晚餐 → 18:45 前抵達 Supertree Grove（擎天樹叢）休息等候。</p>
+          <p><strong>19:45－21:15：</strong>Garden Rhapsody（擎天樹燈光秀）結束後，步行 35－45 分到 Event Plaza（金沙戶外活動廣場）看 21:00 Spectra（金沙水舞秀）。</p>
+          <p><strong>21:20 後：</strong>若長輩仍有體力，再搭 Grab（叫車服務）到 Merlion Park（魚尾獅公園）拍照；否則直接回飯店。魚尾獅是這一版最先取消的節點。</p>
+          <div class="flex flex-wrap gap-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Sands+SkyPark+Observation+Deck" target="_blank">金沙觀景台地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Gardens+by+the+Bay+Singapore" target="_blank">濱海灣花園地圖</a><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Merlion+Park" target="_blank">魚尾獅公園地圖</a></div>
         </div>
       </details>
       <details class="card overflow-hidden">
         <summary class="p-5 md:p-6 flex items-center justify-between font-extrabold text-lg bg-indigo-50"><span>8/2 備用｜飯店附近免費小景點</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
         <div class="p-6 text-sm text-slate-600 space-y-3">
+          <div class="photo-gallery">
+            <figure><img src="assets/singapore-itinerary/far-east-square.jpg" alt="新加坡遠東廣場" loading="lazy"><figcaption>Far East Square（遠東廣場）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/thian-hock-keng.jpg" alt="新加坡天福宮" loading="lazy"><figcaption>Thian Hock Keng Temple（天福宮）</figcaption></figure>
+            <figure><img src="assets/singapore-itinerary/club-street.jpg" alt="新加坡客納街" loading="lazy"><figcaption>Club Street（客納街）</figcaption></figure>
+          </div>
           <p><strong>只挑 1－2 個，不必全部走完。</strong>全程以飯店、亞坤與直落亞逸街周邊為主；最晚 13:30 開始折返，14:30 前回飯店。</p>
           <p><strong>Far East Square（遠東廣場歷史街區）：</strong>亞坤所在的修復店屋街區，用餐後順路看，約 15－20 分鐘。</p>
           <p><strong>Thian Hock Keng Temple（天福宮）：</strong>從亞坤步行約 7－10 分鐘，新加坡歷史悠久的福建廟宇；參觀約 20－30 分鐘，衣著保持整潔。</p>
@@ -489,7 +587,7 @@
       </details>
       <details class="card overflow-hidden">
         <summary class="p-5 md:p-6 flex items-center justify-between font-extrabold text-lg bg-purple-50"><span>8/4 備用｜下船延誤方案</span><i class="fa-solid fa-chevron-down chevron"></i></summary>
-        <div class="p-6 text-sm text-slate-600"><p>若 09:00 後才離開郵輪中心，取消 Rain Vortex（雨漩渦）與 The Hainan Story（海南寶），專車直接前往出發航廈；完成報到與托運後只在管制區內用餐。14:10 起飛應以準時報到優先，不為 Jewel 冒險。</p></div>
+        <div class="p-6 text-sm text-slate-600 space-y-3"><div class="photo-gallery"><figure><img src="assets/singapore-itinerary/jewel-rain-vortex.jpg" alt="星耀樟宜雨漩渦" loading="lazy"><figcaption>HSBC Rain Vortex（雨漩渦）；延誤時優先取消</figcaption></figure></div><p>若 09:00 後才離開郵輪中心，取消 Rain Vortex（雨漩渦）與 The Hainan Story（海南寶），專車直接前往出發航廈；完成報到與托運後只在管制區內用餐。14:10 起飛應以準時報到優先，不為 Jewel 冒險。</p></div>
       </details>
     </section>
 
@@ -503,6 +601,9 @@
               <li><strong>託運行李：</strong>建議每 2 人共用 1 個 24－26 吋行李箱，8 人約 4 箱；另每人 1 個隨身背包。郵輪房間空間有限，不建議每人都帶 28 吋箱。</li>
               <li><strong>換洗衣物：</strong>5 天準備 4－5 套薄短袖、4－5 套貼身衣物、1 件薄外套、1 套睡衣、泳衣及舒適防滑鞋；郵輪冷氣與花園雙館較冷。</li>
               <li><strong>必備清單：</strong>護照、電子機票、船票、保險證明、信用卡、少量新幣與馬幣、個人藥品、摺疊傘、防曬、行動電源、Type G 轉接頭、充電線及防水夾鏈袋。</li>
+              <li><strong>少量現金：</strong>8 人全團建議準備新加坡幣 S$400－600、馬來幣 RM400－600，由 2－3 人分散保管並多換 S$5／S$10、RM10／RM20 小鈔。新加坡主要用於熟食中心、小販或臨時付款；馬幣用於麻六甲餐飲、小店、小費及無法刷卡時備用。</li>
+              <li><strong>美元：</strong>不建議拿美元直接消費。新加坡與馬來西亞的日常商店、餐廳及小販通常要求新加坡幣或馬來幣；美元較適合作緊急備用換匯，直接付款可能不收或匯率不佳。</li>
+              <li><strong>郵輪通訊：</strong>登船前先安裝 Dream Cruises（星夢郵輪）旅客專用 App。連上船內指定 Wi-Fi 後，可免費使用 App 與同行旅伴互傳訊息；這不等於免費對外網路，瀏覽網站、社群及通訊軟體通常仍須另購船上網路方案，實際功能以登船說明為準。</li>
               <li><strong>行動電源：</strong>必須放隨身行李，不可託運；容量標示要清楚，仍以航空公司最新規則為準。</li>
             </ul>
           </div>
@@ -530,24 +631,25 @@
         <p class="text-blue-600 font-bold">預估費用</p>
         <h2 class="text-2xl font-extrabold mt-1"><i class="fa-solid fa-coins text-blue-600 mr-2"></i>8 人總額與每人平均</h2>
         <div class="budget-list mt-5 text-sm">
-          <div class="budget-row"><span><strong>郵輪與飯店</strong><br><span class="text-xs text-slate-500">郵輪：露台雙人房 × 1、露台三人房 × 2<br>岸上飯店：Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店），7/31、8/1 共 2 晚</span></span><strong>NT$216,820<br><span class="text-xs font-medium text-slate-500">每人約 NT$27,103</span></strong></div>
-          <div class="budget-row"><span><strong>交通接駁</strong><br><span class="text-xs text-slate-500">旅行社提供：機場→飯店、飯店→郵輪、郵輪→機場</span></span><strong class="text-emerald-700">NT$0</strong></div>
-          <div class="budget-row"><span>eSIM＋濱海灣花園雙館＋金沙觀景台</span><strong>約 NT$16,928</strong></div>
-          <div class="budget-row"><span><strong>自費交通＆飲食</strong><br><span class="text-xs text-slate-500">包含 MRT（地鐵）、Sentosa Express（聖淘沙捷運）、Grab（叫車服務）與岸上餐費</span></span><strong>約 NT$26,000</strong></div>
-          <div class="budget-row"><span>旅平險＋不便險</span><strong>約 NT$2,400</strong></div>
+          <div class="budget-row"><span><strong>郵輪與飯店</strong><br><span class="text-xs text-slate-500">郵輪：露台雙人房 × 1（NT$58,600）、露台三人房 × 2（每房 NT$79,110）<br>岸上飯店：Mercure ICON Singapore City Centre（新加坡市中心美居 ICON 酒店），7/31、8/1 共 2 晚</span></span><strong>NT$216,820<br><span class="text-xs font-medium text-slate-500">每人約 NT$27,103</span></strong></div>
+          <div class="budget-row"><span><strong>交通接駁</strong><br><span class="text-xs text-slate-500">旅行社安排：機場→飯店、飯店→郵輪、郵輪→機場；8 人每人 NT$1,000</span></span><strong>NT$8,000</strong></div>
+          <div class="budget-row"><span><strong>旅行社附贈 eSIM</strong><br><span class="text-xs text-slate-500">每人 1GB，共 8 人，供<strong>新加坡與麻六甲岸上行程</strong>使用。郵輪上改用 Dream Cruises（星夢郵輪）旅客專用 App，可免費與同行旅伴互傳訊息；對外網路通常另計。</span></span><strong class="text-emerald-700">NT$0</strong></div>
+          <div class="budget-row"><span><strong>濱海灣花園雙館＋金沙觀景台預留</strong><br><span class="text-xs text-slate-500">金沙觀景台視第一天班機抵達時間與體力決定是否購票</span></span><strong>約 NT$14,720</strong></div>
+          <div class="budget-row"><span><strong>自費交通＆飲食</strong><br><span class="text-xs text-slate-500">包含 MRT（地鐵）、Grab（叫車服務）與岸上餐費；若採用聖淘沙備用行程，再使用 Sentosa Express（聖淘沙捷運）</span></span><strong>約 NT$26,000</strong></div>
+          <div class="budget-row"><span><strong>旅平險＋不便險</strong></span><strong>約 NT$2,400</strong></div>
           <div class="budget-row"><span><strong>雲頂夢號郵輪服務費</strong><br><span class="text-xs text-slate-500">露台房 S$33 × 8 人 × 2 晚＝S$528</span></span><strong>約 NT$12,936</strong></div>
           <div class="budget-row"><span><strong>雲頂夢號燃油附加費</strong><br><span class="text-xs text-slate-500">S$15 × 8 人 × 2 晚＝S$240；2026/3/20 起新預訂適用</span></span><strong>約 NT$5,880</strong></div>
           <div class="budget-total">
-            <div class="flex justify-between gap-4 text-lg"><span>主行程預估總額</span><strong>約 NT$280,964</strong></div>
-            <div class="flex justify-between gap-4 mt-2 text-blue-100"><span>每人平均</span><strong>約 NT$35,121</strong></div>
+            <div class="flex justify-between gap-4 text-lg"><span>主行程預估總額</span><strong>約 NT$286,756</strong></div>
+            <div class="flex justify-between gap-4 mt-2 text-blue-100"><span>每人平均</span><strong>約 NT$35,845</strong></div>
           </div>
           <div class="budget-option">
             <div class="flex justify-between gap-4"><span><strong>可選：時光之翼標準席</strong><br><span class="text-xs text-slate-500">S$22 × 8 人；以 S$1 ≈ NT$24.5 估算</span></span><strong>＋約 NT$4,312</strong></div>
-            <div class="flex justify-between gap-4 mt-2 mb-4 text-blue-800"><span>若加時光之翼每人平均</span><strong>約 NT$35,660</strong></div>
+            <div class="budget-average flex justify-between gap-4 mt-2 mb-4 text-blue-800"><span>若加時光之翼每人平均</span><strong>約 NT$36,384</strong></div>
             <div class="flex justify-between gap-4"><span><strong>可選：馬六甲 ICQS 往返包車</strong><br><span class="text-xs text-slate-500">約 3.5 小時，13:00－16:30；此岸上行程尚未確定</span></span><strong>＋NT$6,500－9,000</strong></div>
-            <div class="flex justify-between gap-4 mt-2 text-orange-800"><span>若加包車每人平均</span><strong>約 NT$35,933－36,246</strong></div>
+            <div class="budget-average flex justify-between gap-4 mt-2 text-orange-800"><span>若加包車每人平均</span><strong>約 NT$36,657－36,970</strong></div>
           </div>
-          <p class="text-xs text-slate-500">旅行社接送不重複估價。郵輪服務費與燃油附加費依露台房、8 人、2 晚及 S$1 ≈ NT$24.5 暫估；旅行社頁面明載套裝價不含這兩項，最終仍以訂位日期、船上帳戶與旅行社明細為準。若改走 8/1 聖淘沙海洋館備用方案，8 人另加約 NT$9,320。未含購物、酒水、海外刷卡手續費與包車超時。</p>
+          <p class="text-xs text-slate-500">交通接駁依 8 人共 NT$8,000 計算，不再於其他項目重複估價。郵輪服務費與燃油附加費依露台房、8 人、2 晚及 S$1 ≈ NT$24.5 暫估；旅行社頁面明載套裝價不含這兩項，最終仍以訂位日期、船上帳戶與旅行社明細為準。若採用 7/31 聖淘沙備用行程，時光之翼票價已另列於可選費用。未含購物、酒水、海外刷卡手續費與包車超時。</p>
         </div>
       </div>
     </section>
@@ -557,6 +659,7 @@
     <div class="max-w-7xl mx-auto px-5 py-8 text-sm">
       <p class="font-bold text-white">最後更新：2026/06/07</p>
       <p class="mt-2">交通時間為一般路況估算；週末、下雨、排隊及郵輪通關可能增加時間。所有 Google 地圖 按鈕可直接開啟地點或路線。</p>
+      <p class="mt-2 text-slate-400">照片以地點實景為優先，主要取自 Wikimedia Commons；Mercure ICON、Jurassic Nest 與 Wings of Time 使用官方網站圖片。非店內實拍的餐點已明確標示為「餐點示意」。</p>
     </div>
   </footer>
 </body>
