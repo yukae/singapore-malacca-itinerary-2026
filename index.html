@@ -53,6 +53,25 @@
     .photo-gallery img { display:block; width:100%; height:auto; border-radius:.7rem; border:1px solid var(--line-soft); background:#e8e8ed; }
     .photo-gallery figcaption { margin-top:.3rem; color:#6e6e73; font-size:.7rem; line-height:1.4; }
     .backup-photo { display:block; width:auto; max-width:100%; height:auto; max-height:300px; border-radius:.75rem; border:1px solid var(--line-soft); background:#e8e8ed; }
+    .seat-section { margin-top:1rem; border:1px solid #dbe3ea; border-radius:1rem; overflow:hidden; background:#082c3a; color:#f8fafc; }
+    .seat-section-header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.75rem; padding:1rem 1.1rem; background:#082434; }
+    .seat-legend { display:flex; flex-wrap:wrap; gap:.5rem; color:#cbd5e1; font-size:.75rem; }
+    .seat-wrap { display:flex; flex-wrap:wrap; gap:1rem; padding:1rem; }
+    .seat-map-scroll { flex:1 1 340px; overflow-x:auto; padding-bottom:.6rem; scrollbar-width:thin; scrollbar-color:#ffc978 rgba(255,255,255,.08); }
+    .seat-map-scroll::-webkit-scrollbar { height:7px; }
+    .seat-map-scroll::-webkit-scrollbar-track { background:rgba(255,255,255,.08); border-radius:999px; }
+    .seat-map-scroll::-webkit-scrollbar-thumb { background:#ffc978; border-radius:999px; }
+    .seat-map-scroll::-webkit-scrollbar-thumb:hover { background:#ffb655; }
+    .seat-map { min-width:520px; display:grid; grid-template-columns:repeat(3,2rem) 2.2rem repeat(3,2rem) 2.2rem repeat(3,2rem); gap:.55rem .45rem; align-items:center; padding:.75rem; border-radius:.8rem; background:#0b3444; }
+    .seat { min-width:2rem; height:2.55rem; border-radius:.55rem; border:1px solid rgba(255,255,255,.12); background:#092838; display:flex; align-items:center; justify-content:center; font-size:.68rem; font-weight:800; color:#6f8792; position:relative; }
+    .seat.empty::before { content:""; width:.55rem; height:.55rem; border-radius:50%; background:#7d8f97; box-shadow:0 .45rem 0 -.12rem #7d8f97; opacity:.75; }
+    .seat.selected { background:#ffc978; color:#173246; border-color:#ffd99d; box-shadow:inset 0 -4px 0 #4aa3ff; }
+    .seat-row-label { display:flex; align-items:center; justify-content:center; color:#fff; font-size:.8rem; font-weight:800; }
+    .seat-list { flex:1 1 300px; background:#fff8f1; color:#102a3a; border-radius:.8rem; padding:1rem; }
+    .seat-list-row { display:grid; grid-template-columns:1.5rem 1fr auto; gap:.75rem; align-items:center; padding:.48rem 0; border-bottom:1px dashed rgba(15,23,42,.14); }
+    .seat-list-row:last-child { border-bottom:0; }
+    .seat-code { font-size:1.2rem; font-weight:800; color:#8b3d1f; }
+    .seat-paid { color:#64748b; font-size:.72rem; margin-right:.35rem; }
     .leg { margin:.8rem 0; border:1px dashed #bfc0c5; background:#fafafa; border-radius:.55rem; padding:.78rem .9rem; font-size:.86rem; line-height:1.65; color:#515154; }
     .price-table th,.price-table td { padding:.85rem .7rem; border-bottom:1px solid var(--line-soft); vertical-align:top; }
     .price-table th { color:#515154; font-size:.78rem; text-align:left; background:#f5f5f7; }
@@ -224,6 +243,40 @@
           <p class="text-sm text-slate-600 mt-1">航線為 Taiwan Taoyuan International Airport（桃園國際機場）→ Singapore Changi Airport（新加坡樟宜機場）。建議 05:00－05:20 抵達機場；板橋搭捷運轉機場捷運約 65－80 分、NT$185／人，清晨班次與首班車銜接須另行確認，8 人帶行李以預約接送較穩妥。</p>
           <div class="flex flex-wrap gap-2 mt-2"><a class="buy-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Taiwan+Taoyuan+International+Airport" target="_blank">桃園機場 Google 地圖</a><a class="buy-btn platform-official" href="https://www.starlux-airlines.com/zh-TW/experience/inflight-service/inflight-dining" target="_blank">星宇經濟艙餐點與特殊餐</a></div>
           <div class="leg"><i class="fa-solid fa-plane mr-2"></i>JX771｜08:00－12:40，飛行約 4 小時 40 分 → Singapore Changi Airport（新加坡樟宜機場）</div>
+          <div class="seat-section" aria-label="JX771 去程預選座位">
+            <div class="seat-section-header">
+              <div>
+                <p class="text-xs font-bold text-cyan-200">JX771 去程預選座位</p>
+                <h4 class="text-xl font-extrabold">8 人座位圖｜桃園 → 新加坡</h4>
+              </div>
+              <div class="seat-legend"><span>黃色＝同行已選座</span><span>座位排列：A B C｜D E G｜H J K</span></div>
+            </div>
+            <div class="seat-wrap">
+              <div class="seat-map-scroll" aria-label="機艙座位示意圖">
+                <div class="seat-map">
+                  <div class="seat empty" aria-label="30A"></div><div class="seat empty" aria-label="30B"></div><div class="seat empty" aria-label="30C"></div><div class="seat-row-label">30</div><div class="seat empty" aria-label="30D"></div><div class="seat empty" aria-label="30E"></div><div class="seat empty" aria-label="30G"></div><div class="seat-row-label">30</div><div class="seat empty" aria-label="30H"></div><div class="seat empty" aria-label="30J"></div><div class="seat empty" aria-label="30K"></div>
+                  <div class="seat empty" aria-label="31A"></div><div class="seat empty" aria-label="31B"></div><div class="seat empty" aria-label="31C"></div><div class="seat-row-label">31</div><div class="seat empty" aria-label="31D"></div><div class="seat empty" aria-label="31E"></div><div class="seat empty" aria-label="31G"></div><div class="seat-row-label">31</div><div class="seat empty" aria-label="31H"></div><div class="seat empty" aria-label="31J"></div><div class="seat empty" aria-label="31K"></div>
+                  <div class="seat empty" aria-label="32A"></div><div class="seat empty" aria-label="32B"></div><div class="seat empty" aria-label="32C"></div><div class="seat-row-label">32</div><div class="seat empty" aria-label="32D"></div><div class="seat empty" aria-label="32E"></div><div class="seat empty" aria-label="32G"></div><div class="seat-row-label">32</div><div class="seat empty" aria-label="32H"></div><div class="seat empty" aria-label="32J"></div><div class="seat empty" aria-label="32K"></div>
+                  <div class="seat empty" aria-label="33A"></div><div class="seat empty" aria-label="33B"></div><div class="seat empty" aria-label="33C"></div><div class="seat-row-label">33</div><div class="seat empty" aria-label="33D"></div><div class="seat empty" aria-label="33E"></div><div class="seat empty" aria-label="33G"></div><div class="seat-row-label">33</div><div class="seat empty" aria-label="33H"></div><div class="seat empty" aria-label="33J"></div><div class="seat empty" aria-label="33K"></div>
+                  <div class="seat empty" aria-label="34A"></div><div class="seat empty" aria-label="34B"></div><div class="seat empty" aria-label="34C"></div><div class="seat-row-label">34</div><div class="seat empty" aria-label="34D"></div><div class="seat empty" aria-label="34E"></div><div class="seat empty" aria-label="34G"></div><div class="seat-row-label">34</div><div class="seat empty" aria-label="34H"></div><div class="seat empty" aria-label="34J"></div><div class="seat empty" aria-label="34K"></div>
+                  <div class="seat empty" aria-label="35A"></div><div class="seat empty" aria-label="35B"></div><div class="seat empty" aria-label="35C"></div><div class="seat-row-label">35</div><div class="seat empty" aria-label="35D"></div><div class="seat empty" aria-label="35E"></div><div class="seat empty" aria-label="35G"></div><div class="seat-row-label">35</div><div class="seat empty" aria-label="35H"></div><div class="seat selected" aria-label="35J 阿惠">阿惠</div><div class="seat selected" aria-label="35K 小魚">小魚</div>
+                  <div class="seat empty" aria-label="36A"></div><div class="seat empty" aria-label="36B"></div><div class="seat empty" aria-label="36C"></div><div class="seat-row-label">36</div><div class="seat empty" aria-label="36D"></div><div class="seat empty" aria-label="36E"></div><div class="seat empty" aria-label="36G"></div><div class="seat-row-label">36</div><div class="seat selected" aria-label="36H 阿心">阿心</div><div class="seat selected" aria-label="36J 雅婷">雅婷</div><div class="seat selected" aria-label="36K 小安">小安</div>
+                  <div class="seat empty" aria-label="37A"></div><div class="seat empty" aria-label="37B"></div><div class="seat empty" aria-label="37C"></div><div class="seat-row-label">37</div><div class="seat empty" aria-label="37D"></div><div class="seat empty" aria-label="37E"></div><div class="seat empty" aria-label="37G"></div><div class="seat-row-label">37</div><div class="seat selected" aria-label="37H 阿芯">阿芯</div><div class="seat selected" aria-label="37J 爸爸">爸爸</div><div class="seat selected" aria-label="37K 媽媽">媽媽</div>
+                </div>
+              </div>
+              <div class="seat-list">
+                <h5 class="font-extrabold text-lg mb-2">座位名單</h5>
+                <div class="seat-list-row"><span>1.</span><strong>YU / CHINHSIUNG MR</strong><span><span class="seat-code">37J</span></span></div>
+                <div class="seat-list-row"><span>2.</span><strong>HAN / YUCHUN MS</strong><span><span class="seat-code">37K</span></span></div>
+                <div class="seat-list-row"><span>3.</span><strong>YU / SHUHUI MS</strong><span><span class="seat-code">35J</span></span></div>
+                <div class="seat-list-row"><span>4.</span><strong>HUANG / YUYAN MISS</strong><span><span class="seat-code">35K</span></span></div>
+                <div class="seat-list-row"><span>5.</span><strong>YU / WANSIN MS</strong><span><span class="seat-code">37H</span></span></div>
+                <div class="seat-list-row"><span>6.</span><strong>TSAI / YISHIN MS</strong><span><span class="seat-code">36H</span></span></div>
+                <div class="seat-list-row"><span>7.</span><strong>YU / YATING MS</strong><span><span class="seat-code">36J</span></span></div>
+                <div class="seat-list-row"><span>8.</span><strong>TSAI / YIAN MS</strong><span><span class="seat-code">36K</span></span></div>
+              </div>
+            </div>
+          </div>
         </article>
         <article class="stop">
           <span class="stop-dot bg-orange-500"><i class="fa-solid fa-van-shuttle"></i></span>
@@ -524,6 +577,40 @@
           <p class="text-sm text-slate-600 mt-1">航線為 Singapore Changi Airport（新加坡樟宜機場）→ Taiwan Taoyuan International Airport（桃園國際機場），表定 14:10－19:00；出發航廈仍以電子機票與當日機場看板為準。</p>
           <a class="buy-btn platform-official mt-2" href="https://www.starlux-airlines.com/zh-TW/experience/inflight-service/inflight-dining" target="_blank">星宇經濟艙餐點與特殊餐</a>
           <a class="buy-btn map-btn mt-2" href="https://www.google.com/maps/search/?api=1&query=Singapore+Changi+Airport" target="_blank">樟宜機場 Google 地圖</a>
+          <div class="seat-section" aria-label="JX772 回程預選座位">
+            <div class="seat-section-header">
+              <div>
+                <p class="text-xs font-bold text-cyan-200">JX772 回程預選座位</p>
+                <h4 class="text-xl font-extrabold">8 人座位圖｜新加坡 → 桃園</h4>
+              </div>
+              <div class="seat-legend"><span>黃色＝同行已選座</span><span>座位排列：A B C｜D E G｜H J K</span></div>
+            </div>
+            <div class="seat-wrap">
+              <div class="seat-map-scroll" aria-label="機艙座位示意圖">
+                <div class="seat-map">
+                  <div class="seat empty" aria-label="32A"></div><div class="seat empty" aria-label="32B"></div><div class="seat empty" aria-label="32C"></div><div class="seat-row-label">32</div><div class="seat empty" aria-label="32D"></div><div class="seat empty" aria-label="32E"></div><div class="seat empty" aria-label="32G"></div><div class="seat-row-label">32</div><div class="seat empty" aria-label="32H"></div><div class="seat empty" aria-label="32J"></div><div class="seat empty" aria-label="32K"></div>
+                  <div class="seat selected" aria-label="33A 阿惠">阿惠</div><div class="seat selected" aria-label="33B 小魚">小魚</div><div class="seat empty" aria-label="33C"></div><div class="seat-row-label">33</div><div class="seat empty" aria-label="33D"></div><div class="seat empty" aria-label="33E"></div><div class="seat empty" aria-label="33G"></div><div class="seat-row-label">33</div><div class="seat empty" aria-label="33H"></div><div class="seat empty" aria-label="33J"></div><div class="seat empty" aria-label="33K"></div>
+                  <div class="seat empty" aria-label="34A"></div><div class="seat empty" aria-label="34B"></div><div class="seat empty" aria-label="34C"></div><div class="seat-row-label">34</div><div class="seat empty" aria-label="34D"></div><div class="seat empty" aria-label="34E"></div><div class="seat empty" aria-label="34G"></div><div class="seat-row-label">34</div><div class="seat empty" aria-label="34H"></div><div class="seat empty" aria-label="34J"></div><div class="seat empty" aria-label="34K"></div>
+                  <div class="seat empty" aria-label="35A"></div><div class="seat empty" aria-label="35B"></div><div class="seat empty" aria-label="35C"></div><div class="seat-row-label">35</div><div class="seat empty" aria-label="35D"></div><div class="seat empty" aria-label="35E"></div><div class="seat empty" aria-label="35G"></div><div class="seat-row-label">35</div><div class="seat empty" aria-label="35H"></div><div class="seat empty" aria-label="35J"></div><div class="seat empty" aria-label="35K"></div>
+                  <div class="seat empty" aria-label="36A"></div><div class="seat empty" aria-label="36B"></div><div class="seat empty" aria-label="36C"></div><div class="seat-row-label">36</div><div class="seat empty" aria-label="36D"></div><div class="seat empty" aria-label="36E"></div><div class="seat empty" aria-label="36G"></div><div class="seat-row-label">36</div><div class="seat empty" aria-label="36H"></div><div class="seat empty" aria-label="36J"></div><div class="seat empty" aria-label="36K"></div>
+                  <div class="seat empty" aria-label="37A"></div><div class="seat empty" aria-label="37B"></div><div class="seat empty" aria-label="37C"></div><div class="seat-row-label">37</div><div class="seat empty" aria-label="37D"></div><div class="seat empty" aria-label="37E"></div><div class="seat empty" aria-label="37G"></div><div class="seat-row-label">37</div><div class="seat empty" aria-label="37H"></div><div class="seat empty" aria-label="37J"></div><div class="seat empty" aria-label="37K"></div>
+                  <div class="seat selected" aria-label="38A 爸爸">爸爸</div><div class="seat selected" aria-label="38B 媽媽">媽媽</div><div class="seat selected" aria-label="38C 阿芯">阿芯</div><div class="seat-row-label">38</div><div class="seat empty" aria-label="38D"></div><div class="seat empty" aria-label="38E"></div><div class="seat empty" aria-label="38G"></div><div class="seat-row-label">38</div><div class="seat empty" aria-label="38H"></div><div class="seat empty" aria-label="38J"></div><div class="seat empty" aria-label="38K"></div>
+                  <div class="seat empty" aria-label="39A"></div><div class="seat empty" aria-label="39B"></div><div class="seat empty" aria-label="39C"></div><div class="seat-row-label">39</div><div class="seat empty" aria-label="39D"></div><div class="seat empty" aria-label="39E"></div><div class="seat empty" aria-label="39G"></div><div class="seat-row-label">39</div><div class="seat selected" aria-label="39H 小安">小安</div><div class="seat selected" aria-label="39J 雅婷">雅婷</div><div class="seat selected" aria-label="39K 阿心">阿心</div>
+                </div>
+              </div>
+              <div class="seat-list">
+                <h5 class="font-extrabold text-lg mb-2">座位名單</h5>
+                <div class="seat-list-row"><span>1.</span><strong>YU / CHINHSIUNG MR</strong><span><span class="seat-paid">已付款</span><span class="seat-code">38A</span></span></div>
+                <div class="seat-list-row"><span>2.</span><strong>HAN / YUCHUN MS</strong><span><span class="seat-paid">已付款</span><span class="seat-code">33B</span></span></div>
+                <div class="seat-list-row"><span>3.</span><strong>YU / SHUHUI MS</strong><span><span class="seat-paid">已付款</span><span class="seat-code">38B</span></span></div>
+                <div class="seat-list-row"><span>4.</span><strong>HUANG / YUYAN MISS</strong><span><span class="seat-code">33A</span></span></div>
+                <div class="seat-list-row"><span>5.</span><strong>YU / WANSIN MS</strong><span><span class="seat-paid">已付款</span><span class="seat-code">38C</span></span></div>
+                <div class="seat-list-row"><span>6.</span><strong>TSAI / YISHIN MS</strong><span><span class="seat-paid">已付款</span><span class="seat-code">39K</span></span></div>
+                <div class="seat-list-row"><span>7.</span><strong>YU / YATING MS</strong><span><span class="seat-paid">已付款</span><span class="seat-code">39H</span></span></div>
+                <div class="seat-list-row"><span>8.</span><strong>TSAI / YIAN MS</strong><span><span class="seat-paid">已付款</span><span class="seat-code">39J</span></span></div>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
